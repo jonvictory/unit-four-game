@@ -1,0 +1,102 @@
+body, html {
+    height: 100%;
+  }
+  
+  .bg {
+    background-image: url("");
+    /* background-color: pink; */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+  }
+  
+  .startScreen {
+    /* background-image: url("/clearlink.jpg"); */
+      background-color: black;
+      display: block;
+      height: 100%;
+        background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+  }
+
+  .charSelect {
+      background-color: green;
+      display: none;
+      height: 100%;
+        background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+  }
+    .charOne {
+        border-style: dotted;
+      border-color: black;
+      border-width: 5px;
+    }
+    .charTwo {
+        border-style: dotted;
+      border-color: black;
+      border-width: 5px;
+    }
+    .charThree {
+        border-style: dotted;
+      border-color: black;
+      border-width: 5px;
+    }
+    charSelected {
+        background-color: red;
+      display: none;
+      width: inherit;
+    color: white;
+    text-align: center;
+    z-index: 20;
+    }
+    #charSelOne {
+        background-color: red;
+      display: none;
+      width: inherit;
+    color: white;
+    text-align: center;
+    z-index: 20;
+
+    }
+
+    #charSelTwo {
+        background-color: red;
+      display: none;
+      width: inherit;
+    color: white;
+    text-align: center;
+    z-index: 20;
+
+    }
+
+    #charSelThree {
+        background-color: red;
+      display: none;
+      width: inherit;
+        background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    z-index: 20;
+
+    }
+      
+
+  .mapArea {
+      border-style: dotted;
+      border-color: green;
+      border-width: 5px;
+
+  }
+  .row {
+      height: 120px;
+  }
