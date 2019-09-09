@@ -1,17 +1,18 @@
 body, html {
     height: 100%;
   }
-  
+ 
   .bg {
-    background-image: url("");
-    /* background-color: pink; */
+    /* background-image: url("images/mapWorld.jpg"); */
+    background-color: grey;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: none;
   }
-  
+
+
   .startScreen {
     /* background-image: url("/clearlink.jpg"); */
       background-color: black;
@@ -22,6 +23,16 @@ body, html {
     background-size: cover;
     color: white;
     text-align: center;
+  }
+
+  .containerBg {
+    background-image: url("../images/mapWorld.jpg"); 
+    /* background-color: pink; */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* display: none; */
   }
 
   .charSelect {
@@ -49,7 +60,7 @@ body, html {
       border-color: black;
       border-width: 5px;
     }
-    charSelected {
+    .charSelected {
         background-color: red;
       display: none;
       width: inherit;
@@ -92,11 +103,11 @@ body, html {
       
 
   .mapArea {
-      border-style: dotted;
-      border-color: green;
+      border-style: dashed;
+      border-color: lightgreen;
       border-width: 5px;
-
+        height: 100%;
   }
-  .row {
-      height: 120px;
+  .worldRow {
+      height: 33%;
   }
