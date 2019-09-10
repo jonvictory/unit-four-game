@@ -1,92 +1,156 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- Added link to the jQuery Library -->
+
+<head>
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English|IM+Fell+English+SC|Old+Standard+TT&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <link rel="stylesheet" href="assets\css\style.css">
-    </head>
-    <body>
-        <div class="startScreen">
-            <h1>CLICK TO START</h1>
-        </div>
-        <div class="charSelect">
-            <div class="row">
+    <link rel="stylesheet" href="assets\css\style.css">
+</head>
+
+<body>
+    <div class="startScreen">
+        <h1>CLICK TO START</h1>
+    </div>
+    <div class="container charSelect">
+        <div class="row">
             <h1>SELECT YOUR CHARACTER</h1>
         </div>
         <div class="row">
             <div class="col-md-4 charOne">
-                <h2>I AM A CHAR</h2>
+                <h2>Vampire Hunter</h2>
                 <img src="assets\images\simonAttacking.gif" style="height:50%; width:50%;">
+                <div class="row">
+                        <div id="charSelOne" class="col-md-12 charSelected">
+                                <h2>YOU HAVE SELECTED:</h2>
+                                <h2 class="nameStats"></h2>
+                                <h3>Hit Points</h3>
+                                <p class = "hpStats"></p>
+                                <h3>Attack Power</h3>
+                                <p class = "apStats"></p>
+                                <h3>Counter Power</h3>
+                                <p class = "cpStats"></p>
+                                <p class = "playerConfirm">Click to confirm!</p>
+                        </div>
+                    </div>
             </div>
             <div class="col-md-4 charTwo">
-                <h2>I AM A CHAR</h2>
-                <img src="assets\images\donovanSpecial.gif" style="height:50%; width:50%;">
+                <h2>Adventurer</h2>
+                <img src="assets\images\heroStrider.gif" style="height:60%; width:60%;">
+                <div class="row">
+                    <div id="charSelTwo" class="col-md-12 charSelected">
+                            <h2>YOU HAVE SELECTED:</h2>
+                            <h2 class="nameStats"></h2>
+                            <h3>Hit Points</h3>
+                            <p class = "hpStats"></p>
+                            <h3>Attack Power</h3>
+                            <p class = "apStats"></p>
+                            <h3>Counter Power</h3>
+                            <p class = "cpStats"></p>
+                            <p class = "playerConfirm">Click to confirm!</p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4 charThree">
-                <h2>I AM A CHAR</h2>
-                <img src="assets\images\heroNinja.gif" style="height:50%; width:50%;">
+                <h2>Ninja</h2>
+                <img src="assets\images\heroNinja.gif" style="height:45%; width:45%;">
+                <div class="row">
+                        <div id="charSelThree" class="col-md-12 charSelected">
+                                <h2>YOU HAVE SELECTED:</h2>
+                                <h2 class="nameStats"></h2>
+                                <h3>Hit Points</h3>
+                                <p class = "hpStats"></p>
+                                <h3>Attack Power</h3>
+                                <p class = "apStats"></p>
+                                <h3>Counter Power</h3>
+                                <p class = "cpStats"></p>
+                                <p class = "playerConfirm">Click to confirm!</p>
+                        </div>
+                    </div>
             </div>
         </div>
-        <div class="row">
-        <div  id="charSelOne" class="col-md-4 charSelected">
-            <h2>YOU HAVE SELECTED</h2>
-        </div>
-        <div id="charSelTwo" class="col-md-4 charSelected">
+        <!-- <div class="row">
+            <div id="charSelOne" class="col-md-4 charSelected">
+                <h2>YOU HAVE SELECTED</h2>
+            </div>
+            <div id="charSelTwo" class="col-md-4 charSelected">
                 <h2>YOU HAVE SELECTED</h2>
             </div>
             <div id="charSelThree" class="col-md-4 charSelected">
-                    <h2>YOU HAVE SELECTED</h2>
-                </div>
+                <h2>YOU HAVE SELECTED</h2>
             </div>
-        </div>
-        <div class="bg">
+        </div> -->
+    </div>
+    <div class="bg">
         <header>
             <h1></h1>
         </header>
         <div class="container containerBg">
-            <div class="row worldRow">
-                <div id="fightAreaOne" class="col-md-4 mapArea">
-                    <h2>fightAreaOne</h2>
-                    <img src="assets\images\morriganPose.gif" style="height:50%; width:50%;">
+            <div class="menu">
+                <div class="heroFight">
+                    <h2>FIGHT ME</h2>
                 </div>
-                <div class="col-md-4 mapArea"><p>somecontent</p></div>
-                <div id="fightAreaTwo" class="col-md-4 mapArea">
-                    <h2>fightAreaTwo</h2>
-                    <img src="assets\images\villainTwo.gif">
+                <div class="villainFight">
+                    <h2>FIGHT ME</h2>
                 </div>
             </div>
             <div class="row worldRow">
-                    <div id="playerStart" class="col-md-4 mapArea"><h2>PlayerStart</h2></div>
-                    <div id="fightAreaBoss" class="col-md-4 mapArea">
-                        <h2>fightBoss</h2>
-                        <img src="assets\images\villainFour.gif" style="height:50%; width:50%;">
-                    </div>
-                    <div class="col-md-4 mapArea"><p>somecontent</p></div>
+                <div id="fightAreaOne" class="col-md-4 mapArea">
+                    <h2>fightAreaOne</h2>
+                    <img src="assets\images\morriganPose.gif" style="height:40%; width:40%;">
                 </div>
-                <div class="row worldRow">
-                        <div class="col-md-4 mapArea"><p>somecontent</p></div>
-                        <div id="fightAreaFour" class="col-md-4 mapArea">
-                            <h2>fightAreaFour</h2>
-                            <img src="assets\images\villainThree.gif" style="height:50%; width:50%;">
-                        </div>
-                        <div id="fightAreaThree"class="col-md-4 mapArea">
-                            <h2>fightAreaThree</h2>
-                            <img src="assets\images\merman.gif" style="height:50%; width:50%;">
-                        </div>
-                    </div>
+                <div class="col-md-4 mapArea">
+                    <p>somecontent</p>
+                </div>
+                <div id="fightAreaTwo" class="col-md-4 mapArea">
+                    <h2>fightAreaTwo</h2>
+                    <img src="assets\images\villainTwo.gif" style="height:110%; width:110%;">
+                </div>
+            </div>
+
+            <div class="row worldRow">
+                <div id="playerStart" class="col-md-4 mapArea">
+                    <h2>PlayerStart</h2>
+                </div>
+                <div id="fightAreaBoss" class="col-md-4 mapArea">
+                    <h2>fightBoss</h2>
+                    <img src="assets\images\villainFour.gif" style="height:50%; width:50%;">
+                </div>
+                <div class="col-md-4 mapArea">
+                    <p>somecontent</p>
+                </div>
+
+            </div>
+            <div class="row worldRow">
+                <div class="col-md-4 mapArea">
+                    <p>somecontent</p>
+                </div>
+                <div id="fightAreaFour" class="col-md-4 mapArea">
+                    <h2>fightAreaFour</h2>
+                    <img src="assets\images\villainThree.gif" style="height:75%; width:75%;">
+                </div>
+                <div id="fightAreaThree" class="col-md-4 mapArea">
+                    <h2>fightAreaThree</h2>
+                    <img src="assets\images\merman.gif" style="height:50%; width:50%;">
+                </div>
+            </div>
+
         </div>
+
     </div>
 
-    
-        <footer>
+    <!-- 8019863888 madeline's dr pgr-->
+    <footer>
 
-        </footer>
+    </footer>
 
-        <script type="text/javascript" src="assets\js\game.js">
-        </script>
-       
-    </body>
+    <script type="text/javascript" src="assets\js\game.js">
+    </script>
+
+</body>
+
 </html>

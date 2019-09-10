@@ -1,7 +1,18 @@
 body, html {
     height: 100%;
+    overflow: hidden;
   }
- 
+/* p, h1, h2, h3, h4, h5 {
+  font-family: 'IM Fell English SC', serif;
+} */
+
+/* p, h1, h2, h3, h4, h5 {
+font-family: 'Old Standard TT', serif;
+} */
+
+p, h1, h2, h3, h4, h5 {
+    font-family: 'IM Fell English', serif;
+    }
   .bg {
     /* background-image: url("images/mapWorld.jpg"); */
     background-color: grey;
@@ -10,6 +21,7 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     display: none;
+    overflow: hidden;
   }
 
 
@@ -36,7 +48,8 @@ body, html {
   }
 
   .charSelect {
-      background-color: green;
+      background-image: url("../images/charSelBG.png");
+      /* background-color: green; */
       display: none;
       height: 100%;
         background-position: center;
@@ -44,61 +57,74 @@ body, html {
     background-size: cover;
     color: white;
     text-align: center;
+    padding: 5rem;
   }
     .charOne {
         border-style: dotted;
       border-color: black;
       border-width: 5px;
+      height: 20rem;
     }
     .charTwo {
         border-style: dotted;
       border-color: black;
       border-width: 5px;
+      height: 20rem;
     }
     .charThree {
         border-style: dotted;
       border-color: black;
       border-width: 5px;
+      height: 20rem;
     }
     .charSelected {
-        background-color: red;
+        background-color: tan;
       display: none;
       width: inherit;
     color: white;
     text-align: center;
     z-index: 20;
+    box-shadow: 0px 0px 10px 5px grey;
     }
     #charSelOne {
-        background-color: red;
-      display: none;
-      width: inherit;
+        background-color: tan;
+      /* display: none; */
+    width: inherit;
     color: white;
     text-align: center;
     z-index: 20;
-
+    margin-top: 5rem;
+    opacity: .8;
     }
-
+    #charSelOne:hover {
+        opacity: 1;
+    }
     #charSelTwo {
-        background-color: red;
-      display: none;
+        background-color: tan;
+      /* display: none; */
       width: inherit;
     color: white;
     text-align: center;
     z-index: 20;
-
+    margin-top: 3rem;
+    opacity: .8;
+    }
+    #charSelTwo:hover {
+        opacity: 1;
     }
 
     #charSelThree {
-        background-color: red;
-      display: none;
-      width: inherit;
-        background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+        background-color: tan;
+      /* display: none; */
+    width: inherit;
     color: white;
     text-align: center;
     z-index: 20;
-
+    margin-top: 6rem;
+    opacity: .8;
+    }
+    #charSelThree:hover {
+        opacity: 1;
     }
       
 
@@ -110,4 +136,49 @@ body, html {
   }
   .worldRow {
       height: 33%;
+  }
+
+  .menu {
+      border-style: double;
+      border-color: white;
+      border-width: 5px;
+      background-color: blue;
+      color: white;
+      width: inherit;
+      float: left;
+      display: none;
+      position: relative;
+      height: inherit;
+
+      
+    /* height: 100%;
+    position: absolute;
+    top: 100vh; */
+  }
+
+  .heroFight {
+    border-style: double;
+    border-color: white;
+    border-width: 5px;
+    z-index: 50;
+      display: inline-block;
+      margin-top: 2px;
+      margin-left: 7px;
+      margin-right: 1px;
+      height: 100%;
+      width: 49%;
+  }
+
+  .villainFight {
+    border-style: double;
+    border-color: white;
+    border-width: 5px;  
+    z-index: 50;
+    display: inline-block;
+    
+    height: 100%;
+    width: 49%;
+    margin-top: 2px;
+    margin-left: 1px;
+    margin-right: 7px;
   }
