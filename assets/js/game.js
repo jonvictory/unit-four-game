@@ -121,7 +121,6 @@ window.onload = function () {
         else if ($("#charSelTwo").css("display") == "block") {
             $("#charSelTwo").fadeOut("normal");
         }
-        // $(".charSelect").fadeIn("slow");
     })
 
     $(".charSelected").click(function () {
@@ -141,12 +140,14 @@ window.onload = function () {
         $("#playerStart").append(ryu.image)
     })
 
+    // Begin World Map Activities
+
+    $(".menuButt").click(function () {
+        $("header").slideToggle("slow");
+    })
+
     $("#fightAreaOne").click(function () {
         $(".menu").slideDown("slow");
     })
-
-    // Begin World Map Activities
-
-    
 }
 

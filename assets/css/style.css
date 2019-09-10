@@ -37,7 +37,15 @@ p {
     display: none;
     overflow: hidden;
   }
-
+header {
+    background-color: blue;
+    border-color: white;
+    border-style: ridge;
+    border-width: 0px 10px 10px 10px;
+    padding-top: 10px;
+    height: 20vh;
+    display: none;
+}
 
   .startScreen {
     /* background-image: url("/clearlink.jpg"); */
@@ -178,9 +186,9 @@ p {
   }
 
   .menu {
-      border-style: double;
+      border-style: ridge;
       border-color: white;
-      border-width: 5px;
+      border-width: 10px;
       background-color: blue;
       color: white;
       width: inherit;
@@ -189,10 +197,17 @@ p {
       position: relative;
       height: inherit;
 
-      
-    /* height: 100%;
-    position: absolute;
-    top: 100vh; */
+  }
+
+  .menuButt {
+      border-style: outset;
+      border-width: 10px;
+      border-color: grey;
+      background-color: grey;
+      color: white;
+      float: left;
+      width: 30px;
+      height: 30px;
   }
 
   .heroFight {
