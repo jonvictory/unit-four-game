@@ -11,7 +11,8 @@ window.onload = function () {
         name: "Simon Belmont",
         hp: 800,
         ap: 4,
-        cp: 3
+        cp: 3,
+        image: '<img src="assets/images/simonWalking.gif">'
     }
 
 
@@ -20,7 +21,8 @@ window.onload = function () {
         name: "Strider",
         hp: 600,
         ap: 8,
-        cp: 2
+        cp: 2,
+        image: '<img src="assets/images/heroStrider.gif">'
     }
 
     var ryu = {
@@ -28,8 +30,8 @@ window.onload = function () {
         name: "Ryu Hayabusa",
         hp: 400,
         ap: 10,
-        cp: 10
-
+        cp: 10,
+        image: '<img src="assets/images/heroNinja.gif">'
     }
    
 
@@ -45,7 +47,7 @@ window.onload = function () {
         function () {
         flashInterval = setInterval(function () {
             $('.charOne').toggleClass('red-border');
-        }, 500);
+        }, 300);
     }, function () {
         clearInterval(flashInterval);
         $('.charOne').removeClass('red-border');
@@ -75,7 +77,7 @@ window.onload = function () {
         function () {
         flashInterval = setInterval(function () {
             $('.charTwo').toggleClass('red-border');
-        }, 500);
+        }, 300);
     }, function () {
         clearInterval(flashInterval);
         $('.charTwo').removeClass('red-border');
@@ -101,7 +103,7 @@ window.onload = function () {
         function () {
         flashInterval = setInterval(function () {
             $('.charThree').toggleClass('red-border');
-        }, 500);
+        }, 300);
     }, function () {
         clearInterval(flashInterval);
         $('.charThree').removeClass('red-border');
@@ -129,8 +131,22 @@ window.onload = function () {
         
         $(".bg").fadeIn("slow");
     })
+    $("#charSelOne").click(function () {
+        $("#playerStart").append(simon.image)
+    })
+    $("#charSelTwo").click(function () {
+        $("#playerStart").append(strider.image)
+    })
+    $("#charSelThree").click(function () {
+        $("#playerStart").append(ryu.image)
+    })
 
     $("#fightAreaOne").click(function () {
         $(".menu").slideDown("slow");
     })
+
+    // Begin World Map Activities
+
+    
 }
+
