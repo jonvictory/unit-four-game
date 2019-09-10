@@ -39,6 +39,18 @@ window.onload = function () {
         $(".charSelect").fadeIn("slow");
     })
 
+    var flashInterval;
+
+    $('.charOne').hover(
+        function () {
+        flashInterval = setInterval(function () {
+            $('.charOne').toggleClass('red-border');
+        }, 500);
+    }, function () {
+        clearInterval(flashInterval);
+        $('.charOne').removeClass('red-border');
+    });
+
     $(".charOne").click(function () {
 
         $("#charSelOne").fadeIn("slow");
@@ -59,6 +71,16 @@ window.onload = function () {
 
     })
 
+    $('.charTwo').hover(
+        function () {
+        flashInterval = setInterval(function () {
+            $('.charTwo').toggleClass('red-border');
+        }, 500);
+    }, function () {
+        clearInterval(flashInterval);
+        $('.charTwo').removeClass('red-border');
+    });
+
     $(".charTwo").click(function () {
         $("#charSelTwo").fadeIn("slow");
         $(".nameStats").text(strider.name)
@@ -74,6 +96,16 @@ window.onload = function () {
         }
         // $(".charSelect").fadeIn("slow");
     })
+
+    $('.charThree').hover(
+        function () {
+        flashInterval = setInterval(function () {
+            $('.charThree').toggleClass('red-border');
+        }, 500);
+    }, function () {
+        clearInterval(flashInterval);
+        $('.charThree').removeClass('red-border');
+    });
 
     $(".charThree").click(function () {
         $("#charSelThree").fadeIn("slow");
