@@ -35,6 +35,7 @@ window.onload = function () {
 
     $(".startScreen").click(function () {
         $(".startScreen").fadeOut("slow");
+        $(".charSelbg").fadeIn("slow");
         $(".charSelect").fadeIn("slow");
     })
 
@@ -90,8 +91,10 @@ window.onload = function () {
     })
 
     $(".charSelected").click(function () {
+        $(".charSelbg").fadeOut("slow");
         $(".charSelect").fadeOut("slow");
         $(".charSelected").fadeOut("slow");
+        
         $(".bg").fadeIn("slow");
     })
 
