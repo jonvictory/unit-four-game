@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md-4 charOne">
                 <h2>Vampire Hunter</h2>
-                <img src="assets\images\simonAttacking.gif" style="height:50%; width:50%;">
+                <img src="assets\images\simonAttacking.gif" class="images">
                 <div class="row">
                         <div id="charSelOne" class="col-md-12 charSelected">
                                 <h2>YOU HAVE SELECTED:</h2>
@@ -43,7 +43,7 @@
             </div>
             <div class="col-md-4 charTwo">
                 <h2>Adventurer</h2>
-                <img src="assets\images\heroStrider.gif" style="height:60%; width:60%;">
+                <img src="assets\images\heroStrider.gif" class="images">
                 <div class="row">
                     <div id="charSelTwo" class="col-md-12 charSelected">
                             <h2>YOU HAVE SELECTED:</h2>
@@ -60,7 +60,7 @@
             </div>
             <div class="col-md-4 charThree">
                 <h2>Ninja</h2>
-                <img src="assets\images\heroNinja.gif" style="height:45%; width:45%;">
+                <img src="assets\images\heroNinja.gif" class="images">
                 <div class="row">
                         <div id="charSelThree" class="col-md-12 charSelected">
                                 <h2>YOU HAVE SELECTED:</h2>
@@ -83,7 +83,11 @@
     <!-- BEGIN WORLD MAP -->
     <div class="bg">
         <header>
-            <h1></h1>
+            <div class="row">
+                <div class="col-md-4"><p id="printHP"></p></div>
+                <div class="col-md-4"><p id="printAP"></p></div>
+                <div class="col-md-4"><p id="printCP"></p></div>
+            </div>
         </header>
         
         <div class="container containerBg">
@@ -98,24 +102,31 @@
             <div class="row worldRow">
                 <div id="fightAreaOne" class="col-md-4 mapArea">
                     <h2>fightAreaOne</h2>
-                    <img src="assets\images\morriganPose.gif" style="height:40%; width:40%;">
+                    <div id="conContOne" class="conCont">
+                    <img src="assets\images\morriganPose.gif" class="images">
+                    </div>
                 </div>
                 <div class="col-md-4 mapArea">
                     <p>somecontent</p>
                 </div>
                 <div id="fightAreaTwo" class="col-md-4 mapArea">
                     <h2>fightAreaTwo</h2>
-                    <img src="assets\images\villainTwo.gif" style="height:110%; width:110%;">
+                    <div id="conContTwo" class="conCont">
+                    <img src="assets\images\villainTwo.gif" class="images">
+                    </div>
                 </div>
             </div>
 
             <div class="row worldRow">
                 <div id="playerStart" class="col-md-4 mapArea">
                     <h2>PlayerStart</h2>
+                    <div id="playerCont" class="charCont"></div>
                 </div>
                 <div id="fightAreaBoss" class="col-md-4 mapArea">
                     <h2>fightBoss</h2>
-                    <img src="assets\images\villainFour.gif" style="height:50%; width:50%;">
+                    <div id="BossCont" class="conCont">
+                    <img src="assets\images\villainFour.gif" class="images">
+                </div>
                 </div>
                 <div class="col-md-4 mapArea">
                     <p>somecontent</p>
@@ -128,11 +139,15 @@
                 </div>
                 <div id="fightAreaFour" class="col-md-4 mapArea">
                     <h2>fightAreaFour</h2>
-                    <img src="assets\images\villainThree.gif" style="height:75%; width:75%;">
+                    <div id="conContThree" class="conCont">
+                    <img src="assets\images\villainThree.gif" class="images">
+                    </div>
                 </div>
                 <div id="fightAreaThree" class="col-md-4 mapArea">
                     <h2>fightAreaThree</h2>
-                    <img src="assets\images\merman.gif" style="height:50%; width:50%;">
+                    <div id="conContFour" class="conCont">
+                    <img src="assets\images\merman.gif" class="images">
+                    </div>
                 </div>
             </div>
 

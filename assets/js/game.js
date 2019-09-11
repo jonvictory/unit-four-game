@@ -1,4 +1,5 @@
 window.onload = function () {
+    //player's character after selection
 
     var hp = [];
     var ap = [];
@@ -12,7 +13,7 @@ window.onload = function () {
         hp: 800,
         ap: 4,
         cp: 3,
-        image: '<img src="assets/images/simonWalking.gif">'
+        image: '<img src="assets/images/simonWalking.gif" class="images">'
     }
 
 
@@ -22,7 +23,7 @@ window.onload = function () {
         hp: 600,
         ap: 8,
         cp: 2,
-        image: '<img src="assets/images/heroStrider.gif">'
+        image: '<img src="assets/images/heroStrider.gif" class="images">'
     }
 
     var ryu = {
@@ -31,7 +32,7 @@ window.onload = function () {
         hp: 400,
         ap: 10,
         cp: 10,
-        image: '<img src="assets/images/heroNinja.gif">'
+        image: '<img src="assets/images/heroNinja.gif" class="images">'
     }
    
 
@@ -131,20 +132,86 @@ window.onload = function () {
         $(".bg").fadeIn("slow");
     })
     $("#charSelOne").click(function () {
-        $("#playerStart").append(simon.image)
-    })
-    $("#charSelTwo").click(function () {
-        $("#playerStart").append(strider.image)
-    })
-    $("#charSelThree").click(function () {
-        $("#playerStart").append(ryu.image)
+        $("#playerCont").append(simon.image)
+        hp.push(simon.hp)
+        ap.push(simon.ap)
+        cp.push(simon.cp)
     })
 
+    $("#charSelTwo").click(function () {
+        $("#playerCont").append(strider.image)
+        hp.push(strider.hp)
+        ap.push(strider.ap)
+        cp.push(strider.cp)
+    })
+    $("#charSelThree").click(function () {
+        $("#playerCont").append(ryu.image)
+        hp.push(ryu.hp)
+        ap.push(ryu.ap)
+        cp.push(ryu.cp)
+    })
+console.log(hp)
+console.log(ap)
+console.log(cp)
     // Begin World Map Activities
 
     $(".menuButt").click(function () {
         $("header").slideToggle("slow");
+        $("#printHP").text(hp);
+        $("#printAP").text(ap);
+        $("#printCP").text(cp);
     })
+
+
+
+
+var x;
+var y;
+$('.conCont').each(function(index){
+    $(this).click(function(){
+        $(this).addClass('selected') ;
+        x = $(this).offset().left;
+        y = $(this).offset().top;
+        console.log(x);
+        console.log(y);
+    })
+    });
+
+$('.charCont').each(function(index){
+    var xi = $(this).offset().left;
+    var yi = $(this).offset().top;
+    $(this).css('left', xi).css('top', yi);
+    console.log($(this).css('left', xi).css('top', yi))
+    console.log(xi)
+    $(this).click(function(){
+         $(this).animate({
+    left: x,
+    top: y
+            
+         })
+    })
+
+});
+
+    // $("#conContThree").on("click", myMove);
+
+    // function myMove() {  
+    //     var pos = 0;
+    //     var id = setInterval(frame, 5);
+
+    //     function frame() {
+    //       if (pos == 350) {
+    //         clearInterval(id);
+    //       } else {
+    //         pos++; 
+    //         $(".charCont").css("top", pos + "px");
+    //         $(".charCont").css("left", pos + "px"); 
+    //       }
+    //     }
+    //   }
+
+
+
 
     $("#fightAreaOne").click(function () {
         $(".menu").slideDown("slow");

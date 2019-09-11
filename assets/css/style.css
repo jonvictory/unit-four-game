@@ -193,9 +193,27 @@ footer {
       border-color: lightgreen;
       border-width: 5px;
         height: 100%;
+        position: relative;
   }
   .worldRow {
       height: 33%;
+  }
+
+  .charCont {
+      height: 110px;
+      width: 110px;
+      position: absolute;
+      -webkit-transition: all 5.5s ease-in-out;
+    -moz-transition: all 5.5s ease-in-out;
+    -ms-transition: all 5.5s ease-in-out;
+    -o-transition: all 5.5s ease-in-out;
+    transition: all 5.5s ease-in-out;  
+  }
+
+  .conCont {
+    height: 110px;
+    width: 110px;
+    position: absolute;
   }
 
   .menu {
@@ -252,4 +270,9 @@ footer {
     margin-top: 2px;
     margin-left: 1px;
     margin-right: 7px;
+  }
+
+  .images {
+      height: 100px;
+      width: 100px;
   }
