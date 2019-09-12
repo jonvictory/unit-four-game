@@ -162,36 +162,115 @@ console.log(cp)
         $("#printCP").text(cp);
     })
 
-
-
-
-var x;
-var y;
-$('.conCont').each(function(index){
-    $(this).click(function(){
-        $(this).addClass('selected') ;
-        x = $(this).offset().left;
-        y = $(this).offset().top;
-        console.log(x);
-        console.log(y);
+    // $(".conCont").on("click", conContID) {
+    //     var conContOff = $( "#conContThree" ).last();
+    //   var offset = conContOff.offset();
+    //   console.log( "left: " + offset.left + ", top: " + offset.top );
+    //     // $(".charCont").animate({
+    //     //   left: '250px',
+    //     //   opacity: '0.5',
+    //     //   height: '150px',
+    //     //   width: '150px'
+    //     // });
+    //   }); 
+    var x;
+    var y;
+    var xi;
+    var yi;
+    var xToMove;
+    var yToMove;
+    $("#conContTwo").click(function(){
+       x = $(this).offset().top;
+       y = $(this).offset().left;
+        xi = $("#playerCont").offset().top
+        yi = $("#playerCont").offset().left
+        console.log(x)
+        console.log(y)
+        console.log(xi)
+        console.log(yi)
+        xToMove = x - xi;
+        yToMove = y - yi;
+        console.log(xToMove)
+        console.log(yToMove)
     })
+    $("#conContThree").click(function(){
+        x = $(this).offset().top;
+        y = $(this).offset().left;
+         xi = $("#playerCont").offset().top
+         yi = $("#playerCont").offset().left
+         console.log(x)
+         console.log(y)
+         console.log(xi)
+         console.log(yi)
+         xToMove = x - xi;
+         yToMove = y - yi;
+         console.log(xToMove)
+         console.log(yToMove)
+     })
+     $("#conContFour").click(function(){
+        x = $(this).offset().top;
+        y = $(this).offset().left;
+         xi = $("#playerCont").offset().top
+         yi = $("#playerCont").offset().left
+         console.log(x)
+         console.log(y)
+         console.log(xi)
+         console.log(yi)
+         xToMove = x - xi;
+         yToMove = y - yi;
+         console.log(xToMove)
+         console.log(yToMove)
+     })
+     $("#conContBoss").click(function(){
+        x = $(this).offset().top;
+        y = $(this).offset().left;
+         xi = $("#playerCont").offset().top
+         yi = $("#playerCont").offset().left
+         console.log(x)
+         console.log(y)
+         console.log(xi)
+         console.log(yi)
+         xToMove = x - xi;
+         yToMove = y - yi;
+         console.log(xToMove)
+         console.log(yToMove)
+     })
+
+    $('#playerCont').click(function(){
+        var pos1 = $(this).position();
+    
+        $(this).animate({ 'top': pos1.top + xToMove + 75, 'left': pos1.left + yToMove + 75}, 200, function(){
+        $('#playerCont').appendTo($("#playerAppear"))
+        });
     });
+      
+// var x;
+// var y;
+// $('.conCont').each(function(){
+//     $(this).click(function(){
+//         $(this).addClass('selected') ;
+//         x = $(this).offset().left;
+//         y = $(this).offset().top;
+//         console.log(x);
+//         console.log(y);
+//     })
+//     });
 
-$('.charCont').each(function(index){
-    var xi = $(this).offset().left;
-    var yi = $(this).offset().top;
-    $(this).css('left', xi).css('top', yi);
-    console.log($(this).css('left', xi).css('top', yi))
-    console.log(xi)
-    $(this).click(function(){
-         $(this).animate({
-    left: x,
-    top: y
+// $('.charCont').each(function(){
+//     var xi = $(this).offset().left;
+//     var yi = $(this).offset().top;
+//     $(this).css('left', xi).css('top', yi);
+//     console.log(yi)
+//     console.log(xi)
+//     $(this).click(function(){
+//          $(this).animate({
+//     left: x,
+//     top: y
             
-         })
-    })
+//          })
+//     })
 
-});
+// });
 
     // $("#conContThree").on("click", myMove);
 
