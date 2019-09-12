@@ -5,6 +5,7 @@ window.onload = function () {
     var ap = [];
     var cp = [];
     var pImage = [];
+    var pName = [];
 
     var heroArray = [simon, strider, ryu];
 
@@ -133,26 +134,36 @@ window.onload = function () {
         $(".bg").fadeIn("slow");
     })
     $("#charSelOne").click(function () {
-        $("#playerCont").append(simon.image)
         hp.push(simon.hp)
         ap.push(simon.ap)
         cp.push(simon.cp)
         pImage.push(simon.image)
+        pName.push(simon.name)
+        $("#playerCont").append(simon.image)
+        $("#textCont").slideDown("slow")
+        $("#textUpdate").text(simon.name + ", click on a MONSTER to engage them in battle.")
+
     })
 
     $("#charSelTwo").click(function () {
-        $("#playerCont").append(strider.image)
         hp.push(strider.hp)
         ap.push(strider.ap)
         cp.push(strider.cp)
         pImage.push(strider.image)
+        pName.push(strider.name)
+        $("#playerCont").append(strider.image)
+        $("#textCont").slideDown("slow")
+        $("#textUpdate").text(strider.name + ", click on a MONSTER to engage them in battle.")
     })
     $("#charSelThree").click(function () {
-        $("#playerCont").append(ryu.image)
         hp.push(ryu.hp)
         ap.push(ryu.ap)
         cp.push(ryu.cp)
         pImage.push(ryu.image)
+        pName.push(ryu.name)
+        $("#playerCont").append(ryu.image)
+        $("#textCont").slideDown("slow")
+        $("#textUpdate").text(ryu.name + ", click on a MONSTER to engage them in battle.")
     })
 console.log(hp)
 console.log(ap)
@@ -241,13 +252,83 @@ console.log(cp)
       
     $("#conContOne").click(function () {
         $(".popup").slideDown("slow");
+        $("#textUpdate").text("Do you wish to fight Morigann?")
+
+        $("#confirmB").click(function () {
+            $(".menuFight").slideDown("normal");
+            $(".popup").slideUp("fast");
+        })
+        $("#abandonB").click(function () {
+            $("#choiceCont").slideUp("fast");
+            $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+        })
+        
         
     })
-    $("#confirmB").click(function () {
-        $(".menuFight").slideDown("normal");
+
+    $("#conContTwo").click(function () {
+        $(".popup").slideDown("slow");
+        $("#textUpdate").text("Do you wish to fight Alcard?")
+
+        $("#confirmB").click(function () {
+            $(".menuFight").slideDown("normal");
+            $(".popup").slideUp("fast");
+        })
+        $("#abandonB").click(function () {
+            $("#choiceCont").slideUp("fast");
+            $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+        })
+        
+        
     })
-    $("#abandonB").click(function () {
-        $(".popup").slideUp("fast");
+
+    $("#conContThree").click(function () {
+        $(".popup").slideDown("slow");
+        $("#textUpdate").text("Do you wish to fight Merman?")
+
+        $("#confirmB").click(function () {
+            $(".menuFight").slideDown("normal");
+            $(".popup").slideUp("fast");
+        })
+        $("#abandonB").click(function () {
+            $("#choiceCont").slideUp("fast");
+            $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+        })
+        
+        
     })
+
+    $("#conContFour").click(function () {
+        $(".popup").slideDown("slow");
+        $("#textUpdate").text("Do you wish to fight Bone Dragon?")
+
+        $("#confirmB").click(function () {
+            $(".menuFight").slideDown("normal");
+            $(".popup").slideUp("fast");
+        })
+        $("#abandonB").click(function () {
+            $("#choiceCont").slideUp("fast");
+            $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+        })
+        
+        
+    })
+
+    $("#conContBoss").click(function () {
+        $(".popup").slideDown("slow");
+        $("#textUpdate").text("Do you wish to fight Bone Dragon?")
+
+        $("#confirmB").click(function () {
+            $(".menuFight").slideDown("normal");
+            $(".popup").slideUp("fast");
+        })
+        $("#abandonB").click(function () {
+            $("#choiceCont").slideUp("fast");
+            $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+        })
+        
+        
+    })
+    
 }
 
