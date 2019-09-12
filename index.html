@@ -3,7 +3,8 @@
 
 <head>
     <title></title>
-    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English|IM+Fell+English+SC|Old+Standard+TT&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English|IM+Fell+English+SC|Old+Standard+TT&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Added link to the jQuery Library -->
@@ -19,64 +20,64 @@
 
     <!--BEGIN CHARACTER SELECT SCREEN -->
     <div id="charSelBG" class="charSelbg">
-    <div class="container charSelect">
-        <div class="row">
-            <h1>SELECT YOUR CHARACTER</h1>
-        </div>
-        <div class="row">
-            <div class="col-md-4 charOne">
-                <h2>Vampire Hunter</h2>
-                <img src="assets\images\simonAttacking.gif" class="images">
-                <div class="row">
-                        <div id="charSelOne" class="col-md-12 charSelected">
-                                <h2>YOU HAVE SELECTED:</h2>
-                                <h2 class="nameStats stats"></h2>
-                                <h3>Hit Points</h3>
-                                <p class = "hpStats stats"></p>
-                                <h3>Attack Power</h3>
-                                <p class = "apStats stats"></p>
-                                <h3>Counter Power</h3>
-                                <p class = "cpStats stats"></p>
-                                <p class = "playerConfirm">Click to confirm!</p>
-                        </div>
-                    </div>
+        <div class="container charSelect">
+            <div class="row">
+                <h1>SELECT YOUR CHARACTER</h1>
             </div>
-            <div class="col-md-4 charTwo">
-                <h2>Adventurer</h2>
-                <img src="assets\images\heroStrider.gif" class="images">
-                <div class="row">
-                    <div id="charSelTwo" class="col-md-12 charSelected">
+            <div class="row">
+                <div class="col-md-4 charOne">
+                    <h2>Vampire Hunter</h2>
+                    <img src="assets\images\simonAttacking.gif" class="images">
+                    <div class="row">
+                        <div id="charSelOne" class="col-md-12 charSelected">
                             <h2>YOU HAVE SELECTED:</h2>
                             <h2 class="nameStats stats"></h2>
                             <h3>Hit Points</h3>
-                            <p class = "hpStats stats"></p>
+                            <p class="hpStats stats"></p>
                             <h3>Attack Power</h3>
-                            <p class = "apStats stats"></p>
+                            <p class="apStats stats"></p>
                             <h3>Counter Power</h3>
-                            <p class = "cpStats stats"></p>
-                            <p class = "playerConfirm">Click to confirm!</p>
+                            <p class="cpStats stats"></p>
+                            <p class="playerConfirm">Click to confirm!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 charTwo">
+                    <h2>Adventurer</h2>
+                    <img src="assets\images\heroStrider.gif" class="images">
+                    <div class="row">
+                        <div id="charSelTwo" class="col-md-12 charSelected">
+                            <h2>YOU HAVE SELECTED:</h2>
+                            <h2 class="nameStats stats"></h2>
+                            <h3>Hit Points</h3>
+                            <p class="hpStats stats"></p>
+                            <h3>Attack Power</h3>
+                            <p class="apStats stats"></p>
+                            <h3>Counter Power</h3>
+                            <p class="cpStats stats"></p>
+                            <p class="playerConfirm">Click to confirm!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 charThree">
+                    <h2>Ninja</h2>
+                    <img src="assets\images\heroNinja.gif" class="images">
+                    <div class="row">
+                        <div id="charSelThree" class="col-md-12 charSelected">
+                            <h2>YOU HAVE SELECTED:</h2>
+                            <h2 class="nameStats stats"></h2>
+                            <h3>Hit Points</h3>
+                            <p class="hpStats stats"></p>
+                            <h3>Attack Power</h3>
+                            <p class="apStats stats"></p>
+                            <h3>Counter Power</h3>
+                            <p class="cpStats stats"></p>
+                            <p class="playerConfirm">Click to confirm!</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 charThree">
-                <h2>Ninja</h2>
-                <img src="assets\images\heroNinja.gif" class="images">
-                <div class="row">
-                        <div id="charSelThree" class="col-md-12 charSelected">
-                                <h2>YOU HAVE SELECTED:</h2>
-                                <h2 class="nameStats stats"></h2>
-                                <h3>Hit Points</h3>
-                                <p class = "hpStats stats"></p>
-                                <h3>Attack Power</h3>
-                                <p class = "apStats stats"></p>
-                                <h3>Counter Power</h3>
-                                <p class = "cpStats stats"></p>
-                                <p class = "playerConfirm">Click to confirm!</p>
-                        </div>
-                    </div>
-            </div>
         </div>
-    </div>
     </div>
     <!-- CHARACTER SELECT SCREEN END-->
 
@@ -84,26 +85,69 @@
     <div class="bg">
         <header>
             <div class="row">
-                <div class="col-md-4"><p id="printHP"></p></div>
-                <div class="col-md-4"><p id="printAP"></p></div>
-                <div class="col-md-4"><p id="printCP"></p></div>
+                <div class="col-md-4">
+                    <p id="printHP"></p>
+                </div>
+                <div class="col-md-4">
+                    <p id="printAP"></p>
+                </div>
+                <div class="col-md-4">
+                    <p id="printCP"></p>
+                </div>
             </div>
         </header>
-        
+
         <div class="container containerBg">
-            <div class="menuFight">
-                <div class="heroFight">
-                    <h2>FIGHT ME</h2>
+            <div class="container menuFight">
+                <div class = "row">
+                <div class="col-md-6 heroFight">
+                    <div class="row fightRow">
+                         <div id="heroFightPicture" class="col-md-12">
+                        <h2>FIGHT ME</h2>
+                        </div>
+                    </div>
+                    <div class="row fightRow">
+                            <div id="heroFightStats" class="col-md-12">
+                        <h2>FIGHT ME</h2>
+                        <p id="printfHP"></p>
+                        <p id="printfAP"></p>
+                        <p id="printfCP"></p>
+                        </div>
+                    </div>
+                    <div class="row fightRow">
+                            <div id="heroFightUpdates" class="col-md-12">
+                                <p id="heroFightText"></p>
+                        <h2>FIGHT ME</h2>
+                        </div>
+                    </div>
                 </div>
-                <div class="villainFight">
-                    <h2>FIGHT ME</h2>
+                <div class="col-md-6 villainFight">
+                    <div class="row fightRow">
+                            <div id="villainFightPicture" class="col-md-12">
+                        <h2>FIGHT ME</h2>
+                        </div>
+                    </div>
+                    <div class="row fightRow">
+                            <div id="villainFightStats" class="col-md-12">
+                        <h2>FIGHT ME</h2>
+                        <p id="printvHP"></p>
+                        <p id="printvAP"></p>
+                        <p id="printvCP"></p>
+                        </div>
+                    </div>
+                    <div class="row fightRow">
+                            <div id="villainFightUpdates" class="col-md-12">
+                        <h2>FIGHT ME</h2>
+                        </div>
+                    </div>
                 </div>
+            </div>
             </div>
             <div class="row worldRow">
                 <div id="fightAreaOne" class="col-md-4 mapArea">
                     <h2>fightAreaOne</h2>
                     <div id="conContOne" class="conCont">
-                    <img src="assets\images\morriganPose.gif" class="images">
+                        <img src="assets\images\morriganPose.gif" class="images">
                     </div>
                 </div>
                 <div class="col-md-4 mapArea">
@@ -112,7 +156,7 @@
                 <div id="fightAreaTwo" class="col-md-4 mapArea">
                     <h2>fightAreaTwo</h2>
                     <div id="conContTwo" class="conCont">
-                    <img src="assets\images\villainTwo.gif" class="images">
+                        <img src="assets\images\villainTwo.gif" class="images">
                     </div>
                 </div>
             </div>
@@ -125,8 +169,8 @@
                 <div id="fightAreaBoss" class="col-md-4 mapArea">
                     <h2>fightBoss</h2>
                     <div id="conContBoss" class="conCont">
-                    <img src="assets\images\villainFour.gif" class="images">
-                </div>
+                        <img src="assets\images\villainFour.gif" class="images">
+                    </div>
                 </div>
                 <div class="col-md-4 mapArea">
                     <p>somecontent</p>
@@ -140,17 +184,17 @@
                 <div id="fightAreaFour" class="col-md-4 mapArea">
                     <h2>fightAreaFour</h2>
                     <div id="conContThree" class="conCont">
-                            <img src="assets\images\merman.gif" class="images">
+                        <img src="assets\images\merman.gif" class="images">
                     </div>
                 </div>
                 <div id="fightAreaThree" class="col-md-4 mapArea">
                     <h2>fightAreaThree</h2>
                     <div class="row" style="height: 50%;">
-                    <div id="conContFour" class="conCont">
+                        <div id="conContFour" class="conCont">
                             <img src="assets\images\villainThree.gif" class="images">
-                    
+
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
 
@@ -158,22 +202,28 @@
         <footer>
             <div class="row">
                 <div class="col-md-4">
-                <div id="menuB" class="menuButt"><p>Menu</p></div>
-            </div>
-            <div id="textCont" class="col-md-4 popup">
+                    <div id="menuB" class="menuButt">
+                        <p>Menu</p>
+                    </div>
+                </div>
+                <div id="textCont" class="col-md-4 popup">
                     <p id="textUpdate"></p>
                 </div>
                 <div id="choiceCont" class="col-md-4 popup">
-                                <div id="confirmB" class="menuButt"><p>Confirm?</p></div>
-                                <div id="abandonB" class="menuButt"><p>Abandon?</p></div>
-                        </div>
+                    <div id="confirmB" class="menuButt">
+                        <p>Confirm?</p>
                     </div>
+                    <div id="abandonB" class="menuButt">
+                        <p>Abandon?</p>
+                    </div>
+                </div>
             </div>
-        </footer>
+    </div>
+    </footer>
     </div>
     <!-- WORLD MAP END-->
     <!-- 8019863888 madeline's dr pgr-->
-    
+
 
     <script type="text/javascript" src="assets\js\game.js">
     </script>

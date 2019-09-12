@@ -7,6 +7,12 @@ window.onload = function () {
     var pImage = [];
     var pName = [];
 
+    var vhp = [];
+    var vap = [];
+    var vcp = [];
+    var vpImage = [];
+    var vpName = [];
+
     var heroArray = [simon, strider, ryu];
 
     var simon = {
@@ -36,7 +42,54 @@ window.onload = function () {
         cp: 10,
         image: '<img src="assets/images/heroNinja.gif" class="images">'
     }
-   
+
+    var morigann = {
+        id: 0,
+        name: "Morigann",
+        hp: 100,
+        ap: 10,
+        cp: 1,
+        image: '<img src="assets/images/morriganAttack.gif" class="images">'
+    }
+
+    var alcard = {
+        id: 1,
+        name: "Alcard Dracula",
+        hp: 200,
+        ap: 10,
+        cp: 2,
+        image: '<img src="assets/images/villainTwo.gif" class="images">'
+    }
+
+    var boneDragon = {
+        id: 2,
+        name: "Bone Dragon",
+        hp: 300,
+        ap: 10,
+        cp: 3,
+        image: '<img src="assets/images/villainThree.gif" class="images">'
+    }
+
+    var merman = {
+        id: 3,
+        name: "Mermandia",
+        hp: 400,
+        ap: 10,
+        cp: 4,
+        image: '<img src="assets/images/merman.gif" class="images">'
+    }
+
+    var dracula = {
+        id: 4,
+        name: "Vlad Dracula",
+        hp: 500,
+        ap: 10,
+        cp: 5,
+        image: '<img src="assets/images/villainFour.gif" class="images">'
+    }
+
+
+
 
     $(".startScreen").click(function () {
         $(".startScreen").fadeOut("slow");
@@ -48,13 +101,13 @@ window.onload = function () {
 
     $('.charOne').hover(
         function () {
-        flashInterval = setInterval(function () {
-            $('.charOne').toggleClass('red-border');
-        }, 300);
-    }, function () {
-        clearInterval(flashInterval);
-        $('.charOne').removeClass('red-border');
-    });
+            flashInterval = setInterval(function () {
+                $('.charOne').toggleClass('red-border');
+            }, 300);
+        }, function () {
+            clearInterval(flashInterval);
+            $('.charOne').removeClass('red-border');
+        });
 
     $(".charOne").click(function () {
 
@@ -78,13 +131,13 @@ window.onload = function () {
 
     $('.charTwo').hover(
         function () {
-        flashInterval = setInterval(function () {
-            $('.charTwo').toggleClass('red-border');
-        }, 300);
-    }, function () {
-        clearInterval(flashInterval);
-        $('.charTwo').removeClass('red-border');
-    });
+            flashInterval = setInterval(function () {
+                $('.charTwo').toggleClass('red-border');
+            }, 300);
+        }, function () {
+            clearInterval(flashInterval);
+            $('.charTwo').removeClass('red-border');
+        });
 
     $(".charTwo").click(function () {
         $("#charSelTwo").fadeIn("slow");
@@ -104,13 +157,13 @@ window.onload = function () {
 
     $('.charThree').hover(
         function () {
-        flashInterval = setInterval(function () {
-            $('.charThree').toggleClass('red-border');
-        }, 300);
-    }, function () {
-        clearInterval(flashInterval);
-        $('.charThree').removeClass('red-border');
-    });
+            flashInterval = setInterval(function () {
+                $('.charThree').toggleClass('red-border');
+            }, 300);
+        }, function () {
+            clearInterval(flashInterval);
+            $('.charThree').removeClass('red-border');
+        });
 
     $(".charThree").click(function () {
         $("#charSelThree").fadeIn("slow");
@@ -130,7 +183,7 @@ window.onload = function () {
         $(".charSelbg").fadeOut("slow");
         $(".charSelect").fadeOut("slow");
         $(".charSelected").fadeOut("slow");
-        
+
         $(".bg").fadeIn("slow");
     })
     $("#charSelOne").click(function () {
@@ -165,9 +218,9 @@ window.onload = function () {
         $("#textCont").slideDown("slow")
         $("#textUpdate").text(ryu.name + ", click on a MONSTER to engage them in battle.")
     })
-console.log(hp)
-console.log(ap)
-console.log(cp)
+    console.log(hp)
+    console.log(ap)
+    console.log(cp)
     // Begin World Map Activities
 
     $("#menuB").click(function () {
@@ -244,27 +297,49 @@ console.log(cp)
 
     // $('#playerCont').click(function(){
     //     var pos1 = $(this).position();
-    
+
     //     $(this).animate({ 'top': pos1.top + xToMove + 75, 'left': pos1.left + yToMove + 75}, 200, function(){
     //     $('#playerCont').appendTo($("#playerAppear"))
     //     });
     // });
-      
+
     $("#conContOne").click(function () {
         $(".popup").slideDown("slow");
         $("#textUpdate").text("Do you wish to fight Morigann?")
 
-        $("#confirmB").click(function () {
+
+    })
+
+    $("#confirmB").click(function () {
+        $(this).data('clicked', true);
+        if ($("#confirmB").data('clicked')) {
             $(".menuFight").slideDown("normal");
             $(".popup").slideUp("fast");
-        })
-        $("#abandonB").click(function () {
+            vhp.push(morigann.hp)
+            vap.push(morigann.ap)
+            vcp.push(morigann.cp)
+            vpImage.push(morigann.image)
+            vpName.push(morigann.name)
+            $("#heroFightPicture").append(pImage)
+            $("#printfHP").text(hp);
+            $("#printfAP").text(ap);
+            $("#printfCP").text(cp);
+            $("#villainFightPicture").append(vpImage)
+            $("#printvHP").text(vhp);
+            $("#printvAP").text(vap);
+            $("#printvCP").text(vcp);
+            
+        }
+    });
+
+    $("#abandonB").click(function () {
+        $(this).data('clicked', true);
+        if ($("#abandonB").data('clicked')) {
+
             $("#choiceCont").slideUp("fast");
             $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
-        })
-        
-        
-    })
+        };
+    });
 
     $("#conContTwo").click(function () {
         $(".popup").slideDown("slow");
@@ -273,13 +348,24 @@ console.log(cp)
         $("#confirmB").click(function () {
             $(".menuFight").slideDown("normal");
             $(".popup").slideUp("fast");
+            vhp.push(vlad.hp)
+            vap.push(vlad.ap)
+            vcp.push(vlad.cp)
+            vpImage.push(vlad.image)
+            vpName.push(vlad.name)
+            $("#printHP").text(hp);
+            $("#printAP").text(ap);
+            $("#printCP").text(cp);
+            $("#printvHP").text(vhp);
+            $("#printvAP").text(vap);
+            $("#printvCP").text(vcp);
         })
         $("#abandonB").click(function () {
             $("#choiceCont").slideUp("fast");
             $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
         })
-        
-        
+
+
     })
 
     $("#conContThree").click(function () {
@@ -289,46 +375,74 @@ console.log(cp)
         $("#confirmB").click(function () {
             $(".menuFight").slideDown("normal");
             $(".popup").slideUp("fast");
+            vhp.push(merman.hp)
+            vap.push(merman.ap)
+            vcp.push(merman.cp)
+            vpImage.push(merman.image)
+            vpName.push(merman.name)
+            $("#printHP").text(hp);
+            $("#printAP").text(ap);
+            $("#printCP").text(cp);
+            $("#printvHP").text(vhp);
+            $("#printvAP").text(vap);
+            $("#printvCP").text(vcp);
         })
         $("#abandonB").click(function () {
             $("#choiceCont").slideUp("fast");
             $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
         })
-        
-        
+
+
     })
 
     $("#conContFour").click(function () {
         $(".popup").slideDown("slow");
         $("#textUpdate").text("Do you wish to fight Bone Dragon?")
 
+
         $("#confirmB").click(function () {
             $(".menuFight").slideDown("normal");
             $(".popup").slideUp("fast");
+            vhp.push(boneDragon.hp)
+            vap.push(boneDragon.ap)
+            vcp.push(boneDragon.cp)
+            vpImage.push(boneDragon.image)
+            vpName.push(boneDragon.name)
+            $("#printHP").text(hp);
+            $("#printAP").text(ap);
+            $("#printCP").text(cp);
+            $("#printvHP").text(vhp);
+            $("#printvAP").text(vap);
+            $("#printvCP").text(vcp);
         })
         $("#abandonB").click(function () {
             $("#choiceCont").slideUp("fast");
             $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
         })
-        
-        
+
+
     })
 
     $("#conContBoss").click(function () {
         $(".popup").slideDown("slow");
-        $("#textUpdate").text("Do you wish to fight Bone Dragon?")
+        $("#textUpdate").text("Do you wish to fight DRACULA!?")
 
         $("#confirmB").click(function () {
             $(".menuFight").slideDown("normal");
             $(".popup").slideUp("fast");
+            vhp.push(dracula.hp)
+            vap.push(dracula.ap)
+            vcp.push(dracula.cp)
+            vpImage.push(dracula.image)
+            vpName.push(dracula.name)
         })
         $("#abandonB").click(function () {
             $("#choiceCont").slideUp("fast");
             $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
         })
-        
-        
+
+
     })
-    
+
 }
 
