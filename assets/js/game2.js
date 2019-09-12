@@ -7,11 +7,7 @@ window.onload = function () {
     var pImage = [];
     var pName = [];
 
-    var vhp = [];
-    var vap = [];
-    var vcp = [];
-    var vpImage = [];
-    var vpName = [];
+    
 
     var heroArray = [simon, strider, ryu];
 
@@ -123,7 +119,6 @@ window.onload = function () {
         else if ($("#charSelThree").css("display") == "block") {
             $("#charSelThree").fadeOut("normal");
         }
-        console.log($("#charSelTwo").css("display") === "block")
         // $("#pSelStatsOne").text()
         // $(".charSelect").fadeIn("slow");
 
@@ -218,9 +213,7 @@ window.onload = function () {
         $("#textCont").slideDown("slow")
         $("#textUpdate").text(ryu.name + ", click on a MONSTER to engage them in battle.")
     })
-    console.log(hp)
-    console.log(ap)
-    console.log(cp)
+
     // Begin World Map Activities
 
     $("#menuB").click(function () {
@@ -303,77 +296,109 @@ window.onload = function () {
     //     });
     // });
 
-    $("#conContOne").click(function () {
+    // $("#conContOne").click(function () {
         
 
 
-    })
+    // })
     $(".conCont").click(function(conContID){
         $(this).data('clicked', true);
+        var vhp = [];
+        var vap = [];
+        var vcp = [];
+        var vpImage = [];
+        var vpName = [];
         if ($("#conContOne").data('clicked')) {
+            vhp.shift()
+            vap.shift()
+            vcp.shift()
+            vpImage.shift()
+            vpName.shift()
             vhp.push(morigann.hp)
             vap.push(morigann.ap)
             vcp.push(morigann.cp)
             vpImage.push(morigann.image)
             vpName.push(morigann.name)
             $(".popup").slideDown("slow");
-            $("#textUpdate").text("Do you wish to fight" + vpName + "?");
+            $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
+            $("#textUpdate").text("Do you wish to fight " + vpName + "?");
         }
-        else if ($("#conContTwo").data('clicked')) {
+        if ($("#conContTwo").data('clicked')) {
+            vhp.shift()
+            vap.shift()
+            vcp.shift()
+            vpImage.shift()
+            vpName.shift()
             vhp.push(alcard.hp)
             vap.push(alcard.ap)
             vcp.push(alcard.cp)
             vpImage.push(alcard.image)
             vpName.push(alcard.name)
             $(".popup").slideDown("slow");
-            $("#textUpdate").text("Do you wish to fight" + vpName + "?");
+            $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
+            $("#textUpdate").text("Do you wish to fight " + vpName + "?");
         }
-        else if ($("#conContThree").data('clicked')) {
+        if ($("#conContThree").data('clicked')) {
+            vhp.shift()
+            vap.shift()
+            vcp.shift()
+            vpImage.shift()
+            vpName.shift()
             vhp.push(merman.hp)
             vap.push(merman.ap)
             vcp.push(merman.cp)
             vpImage.push(merman.image)
             vpName.push(merman.name)
             $(".popup").slideDown("slow");
-            $("#textUpdate").text("Do you wish to fight" + vpName + "?");
+            $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
+            $("#textUpdate").text("Do you wish to fight " + vpName + "?");
         }
-        else if ($("#conContFour").data('clicked')) {
+        if ($("#conContFour").data('clicked')) {
+            vhp.shift()
+            vap.shift()
+            vcp.shift()
+            vpImage.shift()
+            vpName.shift()
             vhp.push(boneDragon.hp)
             vap.push(boneDragon.ap)
             vcp.push(boneDragon.cp)
             vpImage.push(boneDragon.image)
             vpName.push(boneDragon.name)
             $(".popup").slideDown("slow");
-            $("#textUpdate").text("Do you wish to fight" + vpName + "?");
+            $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
+            $("#textUpdate").text("Do you wish to fight " + vpName + "?");
         }
+
+        $("#confirmB").click(function () {
+            $(this).data('clicked', true);
+            if ($("#confirmB").data('clicked')) {
+                $(".menuFight").slideDown("normal");
+                $(".popup").slideUp("fast");
+                $("#heroFightPicture").append(pImage)
+                $("#printfHP").text(hp);
+                $("#printfAP").text(ap);
+                $("#printfCP").text(cp);
+                $("#villainFightPicture").append(vpImage)
+                $("#printvHP").text(vhp);
+                $("#printvAP").text(vap);
+                $("#printvCP").text(vcp);
+            }
+        });
+        
+        $("#abandonB").click(function () {
+            $(this).data('clicked', true);
             
+            if ($("#abandonB").data('clicked')) {
+                $("#choiceCont").slideUp("fast");
+                $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+            };
+        });
+
     })
 
-    $("#confirmB").click(function () {
-        $(this).data('clicked', true);
-        if ($("#confirmB").data('clicked')) {
-            $(".menuFight").slideDown("normal");
-            $(".popup").slideUp("fast");
-            $("#heroFightPicture").append(pImage)
-            $("#printfHP").text(hp);
-            $("#printfAP").text(ap);
-            $("#printfCP").text(cp);
-            $("#villainFightPicture").append(vpImage)
-            $("#printvHP").text(vhp);
-            $("#printvAP").text(vap);
-            $("#printvCP").text(vcp);
-            
-        }
-    });
+    
 
-    $("#abandonB").click(function () {
-        $(this).data('clicked', true);
-        if ($("#abandonB").data('clicked')) {
-
-            $("#choiceCont").slideUp("fast");
-            $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
-        };
-    });
+    
 
     // $("#conContTwo").click(function () {
     //     $(".popup").slideDown("slow");
