@@ -4,6 +4,7 @@ window.onload = function () {
     var hp = [];
     var ap = [];
     var cp = [];
+    var pImage = [];
 
     var heroArray = [simon, strider, ryu];
 
@@ -136,6 +137,7 @@ window.onload = function () {
         hp.push(simon.hp)
         ap.push(simon.ap)
         cp.push(simon.cp)
+        pImage.push(simon.image)
     })
 
     $("#charSelTwo").click(function () {
@@ -143,157 +145,109 @@ window.onload = function () {
         hp.push(strider.hp)
         ap.push(strider.ap)
         cp.push(strider.cp)
+        pImage.push(strider.image)
     })
     $("#charSelThree").click(function () {
         $("#playerCont").append(ryu.image)
         hp.push(ryu.hp)
         ap.push(ryu.ap)
         cp.push(ryu.cp)
+        pImage.push(ryu.image)
     })
 console.log(hp)
 console.log(ap)
 console.log(cp)
     // Begin World Map Activities
 
-    $(".menuButt").click(function () {
+    $("#menuB").click(function () {
         $("header").slideToggle("slow");
         $("#printHP").text(hp);
         $("#printAP").text(ap);
         $("#printCP").text(cp);
     })
 
-    // $(".conCont").on("click", conContID) {
-    //     var conContOff = $( "#conContThree" ).last();
-    //   var offset = conContOff.offset();
-    //   console.log( "left: " + offset.left + ", top: " + offset.top );
-    //     // $(".charCont").animate({
-    //     //   left: '250px',
-    //     //   opacity: '0.5',
-    //     //   height: '150px',
-    //     //   width: '150px'
-    //     // });
-    //   }); 
-    var x;
-    var y;
-    var xi;
-    var yi;
-    var xToMove;
-    var yToMove;
-    $("#conContTwo").click(function(){
-       x = $(this).offset().top;
-       y = $(this).offset().left;
-        xi = $("#playerCont").offset().top
-        yi = $("#playerCont").offset().left
-        console.log(x)
-        console.log(y)
-        console.log(xi)
-        console.log(yi)
-        xToMove = x - xi;
-        yToMove = y - yi;
-        console.log(xToMove)
-        console.log(yToMove)
-    })
-    $("#conContThree").click(function(){
-        x = $(this).offset().top;
-        y = $(this).offset().left;
-         xi = $("#playerCont").offset().top
-         yi = $("#playerCont").offset().left
-         console.log(x)
-         console.log(y)
-         console.log(xi)
-         console.log(yi)
-         xToMove = x - xi;
-         yToMove = y - yi;
-         console.log(xToMove)
-         console.log(yToMove)
-     })
-     $("#conContFour").click(function(){
-        x = $(this).offset().top;
-        y = $(this).offset().left;
-         xi = $("#playerCont").offset().top
-         yi = $("#playerCont").offset().left
-         console.log(x)
-         console.log(y)
-         console.log(xi)
-         console.log(yi)
-         xToMove = x - xi;
-         yToMove = y - yi;
-         console.log(xToMove)
-         console.log(yToMove)
-     })
-     $("#conContBoss").click(function(){
-        x = $(this).offset().top;
-        y = $(this).offset().left;
-         xi = $("#playerCont").offset().top
-         yi = $("#playerCont").offset().left
-         console.log(x)
-         console.log(y)
-         console.log(xi)
-         console.log(yi)
-         xToMove = x - xi;
-         yToMove = y - yi;
-         console.log(xToMove)
-         console.log(yToMove)
-     })
+    //image animation attempts.
 
-    $('#playerCont').click(function(){
-        var pos1 = $(this).position();
+    // var x;
+    // var y;
+    // var xi;
+    // var yi;
+    // var xToMove;
+    // var yToMove;
+    // $("#conContTwo").click(function(){
+    //    x = $(this).offset().top;
+    //    y = $(this).offset().left;
+    //     xi = $("#playerCont").offset().top
+    //     yi = $("#playerCont").offset().left
+    //     console.log(x)
+    //     console.log(y)
+    //     console.log(xi)
+    //     console.log(yi)
+    //     xToMove = x - xi;
+    //     yToMove = y - yi;
+    //     console.log(xToMove)
+    //     console.log(yToMove)
+    // })
+    // $("#conContThree").click(function(){
+    //     x = $(this).offset().top;
+    //     y = $(this).offset().left;
+    //      xi = $("#playerCont").offset().top
+    //      yi = $("#playerCont").offset().left
+    //      console.log(x)
+    //      console.log(y)
+    //      console.log(xi)
+    //      console.log(yi)
+    //      xToMove = x - xi;
+    //      yToMove = y - yi;
+    //      console.log(xToMove)
+    //      console.log(yToMove)
+    //  })
+    //  $("#conContFour").click(function(){
+    //     x = $(this).offset().top;
+    //     y = $(this).offset().left;
+    //      xi = $("#playerCont").offset().top
+    //      yi = $("#playerCont").offset().left
+    //      console.log(x)
+    //      console.log(y)
+    //      console.log(xi)
+    //      console.log(yi)
+    //      xToMove = x - xi;
+    //      yToMove = y - yi;
+    //      console.log(xToMove)
+    //      console.log(yToMove)
+    //  })
+    //  $("#conContBoss").click(function(){
+    //     x = $(this).offset().top;
+    //     y = $(this).offset().left;
+    //      xi = $("#playerCont").offset().top
+    //      yi = $("#playerCont").offset().left
+    //      console.log(x)
+    //      console.log(y)
+    //      console.log(xi)
+    //      console.log(yi)
+    //      xToMove = x - xi;
+    //      yToMove = y - yi;
+    //      console.log(xToMove)
+    //      console.log(yToMove)
+    //  })
+
+    // $('#playerCont').click(function(){
+    //     var pos1 = $(this).position();
     
-        $(this).animate({ 'top': pos1.top + xToMove + 75, 'left': pos1.left + yToMove + 75}, 200, function(){
-        $('#playerCont').appendTo($("#playerAppear"))
-        });
-    });
+    //     $(this).animate({ 'top': pos1.top + xToMove + 75, 'left': pos1.left + yToMove + 75}, 200, function(){
+    //     $('#playerCont').appendTo($("#playerAppear"))
+    //     });
+    // });
       
-// var x;
-// var y;
-// $('.conCont').each(function(){
-//     $(this).click(function(){
-//         $(this).addClass('selected') ;
-//         x = $(this).offset().left;
-//         y = $(this).offset().top;
-//         console.log(x);
-//         console.log(y);
-//     })
-//     });
-
-// $('.charCont').each(function(){
-//     var xi = $(this).offset().left;
-//     var yi = $(this).offset().top;
-//     $(this).css('left', xi).css('top', yi);
-//     console.log(yi)
-//     console.log(xi)
-//     $(this).click(function(){
-//          $(this).animate({
-//     left: x,
-//     top: y
-            
-//          })
-//     })
-
-// });
-
-    // $("#conContThree").on("click", myMove);
-
-    // function myMove() {  
-    //     var pos = 0;
-    //     var id = setInterval(frame, 5);
-
-    //     function frame() {
-    //       if (pos == 350) {
-    //         clearInterval(id);
-    //       } else {
-    //         pos++; 
-    //         $(".charCont").css("top", pos + "px");
-    //         $(".charCont").css("left", pos + "px"); 
-    //       }
-    //     }
-    //   }
-
-
-
-
-    $("#fightAreaOne").click(function () {
-        $(".menu").slideDown("slow");
+    $("#conContOne").click(function () {
+        $(".popup").slideDown("slow");
+        
+    })
+    $("#confirmB").click(function () {
+        $(".menuFight").slideDown("normal");
+    })
+    $("#abandonB").click(function () {
+        $(".popup").slideUp("fast");
     })
 }
 
