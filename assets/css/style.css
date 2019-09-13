@@ -224,6 +224,18 @@ footer {
     width: 110px;
     position: absolute;
   }
+  #conContOne {
+    display: block;
+  }
+  #conContTwo {
+    display: block;
+  }
+  #conContThree {
+    display: block;
+  }
+  #conContFour {
+    display: block;
+  }
 
   .menuFight {
       border-style: ridge;
