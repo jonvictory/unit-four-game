@@ -42,7 +42,7 @@ window.onload = function () {
     var morigann = {
         id: 0,
         name: "Morigann",
-        hp: 100,
+        hp: 10,
         ap: 10,
         cp: 1,
         image: '<img src="assets/images/morriganAttack.gif" class="images">'
@@ -373,15 +373,55 @@ window.onload = function () {
             $(this).data('clicked', true);
             if ($("#confirmB").data('clicked')) {
                 $(".menuFight").slideDown("normal");
-                $(".popup").slideUp("fast");
-                $("#heroFightPicture").append(pImage)
+                $("#choiceCont").html('<div id="fightB" class="menuButt"><p>Attack!</p></div>')
+                $("#textUpdate").text("The battle BEGINS: " + pName + " VS " + vpName + " In a fight to the DEATH!");
+                $("#heroFightPicture").html(pImage)
                 $("#printfHP").text(hp);
                 $("#printfAP").text(ap);
                 $("#printfCP").text(cp);
-                $("#villainFightPicture").append(vpImage)
+                $("#villainFightPicture").html(vpImage)
                 $("#printvHP").text(vhp);
                 $("#printvAP").text(vap);
                 $("#printvCP").text(vcp);
+
+
+                // var enableAttack = function(ele) {
+                //     $("#fightB").removeAttr("disabled");
+                // }
+                // var that = this;
+                // $(this).attr("disabled", true);
+                //  setTimeout(function() { enableAttack(that) }, 5000);
+                
+                attackAttack = [];
+                $("#fightB").click(function () {
+                    if (vhp > 0) {
+                    $("#heroFightUpdates").text(pName + " Attacks!!");
+                    $("#villainFightUpdates").text(vpName + " Counters!")
+                    vhp-- 
+                    hp--
+                    $("#printvHP").text(vhp);
+                    $("#printHP").text(hp)
+                    }
+                    else if (vhp <= 0) {
+                    $("#heroFightUpdates").text(pName + " Is VICTORIOUS!!");
+                    $("#villainFightUpdates").text(vpName + " Is DEAD!")
+                    $("#choiceCont").html('<div id="mapB" class="menuButt"><p>Map</p></div>')
+                    $("#mapB").click(function () {
+                        $(".menuFight").slideUp("normal");
+                        $("#playerCont").html(pImage)
+                        $("#textCont").slideDown("slow")
+                        $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+
+                    });
+                }
+                    else if (hp <= 0) {
+                    $("#heroFightUpdates").text(pName + " Is DEAD!!");
+                    $("#villainFightUpdates").text(vpName + " Is VICTORIOUS!")
+                    $("#choiceCont").html('<div id="gameOver" class="menuButt"><p>Reset</p></div>')
+                    }
+
+                })
+
             }
         });
         
