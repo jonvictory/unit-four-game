@@ -24,7 +24,7 @@ window.onload = function () {
     var strider = {
         id: 1,
         name: "Strider",
-        hp: 600,
+        hp: 10,
         ap: 8,
         cp: 2,
         image: '<img src="assets/images/heroStrider.gif" class="images">'
@@ -400,9 +400,9 @@ window.onload = function () {
                     vhp-- 
                     hp--
                     $("#printvHP").text(vhp);
-                    $("#printHP").text(hp)
+                    $("#printfHP").text(hp)
                     }
-                    else if (vhp <= 0) {
+                    if (vhp <= 0) {
                     $("#heroFightUpdates").text(pName + " Is VICTORIOUS!!");
                     $("#villainFightUpdates").text(vpName + " Is DEAD!")
                     $("#choiceCont").html('<div id="mapB" class="menuButt"><p>Map</p></div>')
@@ -414,12 +414,15 @@ window.onload = function () {
 
                     });
                 }
-                    else if (hp <= 0) {
+                    if (hp <= 0) {
                     $("#heroFightUpdates").text(pName + " Is DEAD!!");
                     $("#villainFightUpdates").text(vpName + " Is VICTORIOUS!")
                     $("#choiceCont").html('<div id="gameOver" class="menuButt"><p>Reset</p></div>')
-                    }
-
+                    $("#gameOver").click(function () {
+                        location.reload(true)
+                        
+                    })
+                }
                 })
 
             }
