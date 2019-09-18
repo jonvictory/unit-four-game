@@ -41,6 +41,7 @@ p {
 header {
     background-color: blue;
     border-color: white;
+    color: white;
     border-style: ridge;
     border-width: 0px 10px 10px 10px;
     padding-top: 10px;
@@ -197,6 +198,15 @@ footer {
   }
   .worldRow {
       height: 33%;
+      color: rgb(21, 255, 0);
+      font-weight:bold;
+      
+      
+      
+  }
+  .mapH2 {
+    background-color: tan;
+    color: white;
   }
   .fightRow {
       border-bottom-style: ridge;
@@ -223,18 +233,23 @@ footer {
     height: 110px;
     width: 110px;
     position: absolute;
+    color: white;
   }
   #conContOne {
     display: block;
+    color: white;
   }
   #conContTwo {
     display: block;
+    color: white;
   }
   #conContThree {
     display: block;
+    color: white;
   }
   #conContFour {
     display: block;
+    color: white;
   }
 
   .menuFight {
@@ -270,7 +285,7 @@ footer {
     border-right-style: ridge;
     border-color: white;
     border-width: 10px;
-    z-index: 50;
+    overflow: hidden;
       /* display: inline-block; */
       /* margin-top: 2px;
       margin-left: 7px;
@@ -283,7 +298,7 @@ footer {
     /* border-left-style: ridge;
     border-color: white;
     border-width: 10px;   */
-    z-index: 50;
+    overflow: hidden;
     /* display: inline-block; */
     /* height: 100%;
     width: 50%; */
@@ -296,7 +311,11 @@ footer {
       height: 100px;
       width: 100px;
   }
-
+  .imageCorr {
+    height: 200px;
+    width: 200px;
+    display: block;
+  }
   .popup {
       display: none;
       color: white;
