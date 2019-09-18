@@ -305,24 +305,15 @@ window.onload = function () {
     // $("#conContOne").click(function () {
 
 
+        var vhp = ['ericHolder'];
+        var vap = ['ericHolder'];
+        var vcp = ['ericHolder'];
+        var vpImage = ['ericHolder'];
+        var vpName = ['ericHolder'];
+        var vpLocation = ['ericHolder'];
+    
 
-    // })
-    $(".conCont").click(function (conContID) {
-        $(this).attr('data-clicked', true);
-        var vhp = [];
-        var vap = [];
-        var vcp = [];
-        var vpImage = [];
-        var vpName = [];
-        var vpLocation = [];
-        console.log(vpName)
-
-        if ($("#conContOne").data('clicked')) {
-            $(this).attr('data-clicked', true);
-            $('#conCatTwo').attr('data-clicked', false);
-            $('#conCatThree').attr('data-clicked', false);
-            $('#conCatFour').attr('data-clicked', false);
-            $('#conCat').attr('data-clicked', false);
+        $("#conContOne").click(function() {
             vhp.shift()
             vap.shift()
             vcp.shift()
@@ -335,81 +326,11 @@ window.onload = function () {
             vpImage.push(morigann.image)
             vpName.push(morigann.name)
             vpLocation.push(morigann.location)
+            
             $(".popup").slideDown("slow");
             $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
             $("#textUpdate").text("Do you wish to fight " + vpName[0] + "?");
-        }
-        else if ($("#conContTwo").data('clicked')) {
-            $(this).attr('data-clicked', true);
-            $('#conCatOne').attr('data-clicked', false);
-            $('#conCatThree').attr('data-clicked', false);
-            $('#conCatFour').attr('data-clicked', false);
-            $('#conCat').attr('data-clicked', false);
-            vhp.shift()
-            vap.shift()
-            vcp.shift()
-            vpImage.shift()
-            vpName.shift()
-            vpLocation.shift()
-            vhp.push(alcard.hp)
-            vap.push(alcard.ap)
-            vcp.push(alcard.cp)
-            vpImage.push(alcard.image)
-            vpName.push(alcard.name)
-            vpLocation.push(alcard.location)
-            $(".popup").slideDown("slow");
-            $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
-            $("#textUpdate").text("Do you wish to fight " + vpName[0] + "?");
-        }
-        else if ($("#conContThree").data('clicked')) {
-            $(this).attr('data-clicked', true);
-            $('#conCatTwo').attr('data-clicked', false);
-            $('#conCatOne').attr('data-clicked', false);
-            $('#conCatFour').attr('data-clicked', false);
-            $('#conCat').attr('data-clicked', false);
-            vhp.shift()
-            vap.shift()
-            vcp.shift()
-            vpImage.shift()
-            vpName.shift()
-            vpLocation.shift()
-
-            vhp.push(boneDragon.hp)
-            vap.push(boneDragon.ap)
-            vcp.push(boneDragon.cp)
-            vpImage.push(boneDragon.image)
-            vpName.push(boneDragon.name)
-            vpLocation.push(boneDragon.location)
-            $(".popup").slideDown("slow");
-            $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
-            $("#textUpdate").text("Do you wish to fight " + vpName[0] + "?");
-        }
-        else if ($("#conContFour").data('clicked')) {
-            $(this).attr('data-clicked', true);
-            $('#conCatTwo').attr('data-clicked', false);
-            $('#conCatThree').attr('data-clicked', false);
-            $('#conCatOne').attr('data-clicked', false);
-            $('#conCat').attr('data-clicked', false);
-            vhp.shift()
-            vap.shift()
-            vcp.shift()
-            vpImage.shift()
-            vpName.shift()
-            vpLocation.shift()
-            vhp.push(merman.hp)
-            vap.push(merman.ap)
-            vcp.push(merman.cp)
-            vpImage.push(merman.image)
-            vpName.push(merman.name)
-            vpLocation.push(merman.location)
-            $(".popup").slideDown("slow");
-            $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
-            $("#textUpdate").text("Do you wish to fight " + vpName[0] + "?");
-        }
-
-        $("#confirmB").click(function () {
-            $(this).data('clicked', true);
-            if ($("#confirmB").data('clicked')) {
+            $("#confirmB").click(function () {
                 $(".menuFight").slideDown("normal");
                 $("#choiceCont").html('<div id="fightB" class="menuButt"><p>Attack!</p></div>')
                 $("#textUpdate").text("The battle BEGINS: " + pName + " VS " + vpName[0] + " In a fight to the DEATH!");
@@ -445,18 +366,24 @@ window.onload = function () {
                             $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
                             $("#choiceCont").html('')
                             $(vpLocation[0]).fadeOut("slow")
-                            vhp.shift()
-                            vap.shift()
-                            vcp.shift()
-                            vpImage.shift()
-                            vpName.shift()
-                            vpLocation.shift()
-                            vhp.pop()
-                            vap.pop()
-                            vcp.pop()
-                            vpImage.pop()
-                            vpName.pop()
-                            vpLocation.pop()
+                            // vhp.shift()
+                            // vap.shift()
+                            // vcp.shift()
+                            // vpImage.shift()
+                            // vpName.shift()
+                            // vpLocation.shift()
+                            // vhp.pop()
+                            // vap.pop()
+                            // vcp.pop()
+                            // vpImage.pop()
+                            // vpName.pop()
+                            // vpLocation.pop()
+                            vhp = ['ericHolder'];
+        vap = ['ericHolder'];
+        vcp = ['ericHolder'];
+        vpImage = ['ericHolder'];
+        vpName = ['ericHolder'];
+        vpLocation = ['ericHolder'];
 
                         });
                     }
@@ -471,31 +398,366 @@ window.onload = function () {
                     }
                 })
 
-            }
-        });
+            })
+        
 
         $("#abandonB").click(function () {
-            $(this).data('clicked', true);
-
-            if ($("#abandonB").data('clicked')) {
                 $("#choiceCont").slideUp("fast");
                 $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
-                vhp.shift()
-                vap.shift()
-                vcp.shift()
-                vpImage.shift()
-                vpName.shift()
-                vpLocation.shift()
-                vhp.pop()
-                vap.pop()
-                vcp.pop()
-                vpImage.pop()
-                vpName.pop()
-                vpLocation.pop()
-            };
+            //     vhp.shift()
+            //     vap.shift()
+            //     vcp.shift()
+            //     vpImage.shift()
+            //     vpName.shift()
+            //     vpLocation.shift()
+            //     vhp.pop()
+            //     vap.pop()
+            //     vcp.pop()
+            //     vpImage.pop()
+            //     vpName.pop()
+            //     vpLocation.pop()
+            // $('#conCatOne').attr('data-clicked', false);
+            // $('#conCatTwo').attr('data-clicked', false);
+            // $('#conCatThree').attr('data-clicked', false);
+            // $('#conCatOne').attr('data-clicked', false);
+            // $('#conCat').attr('data-clicked', false);
         });
+        })
 
-    })
+        $("#conContTwo").click(function() {
+
+            vhp.shift()
+            vap.shift()
+            vcp.shift()
+            vpImage.shift()
+            vpName.shift()
+            vpLocation.shift()
+            vhp.push(alcard.hp)
+            vap.push(alcard.ap)
+            vcp.push(alcard.cp)
+            vpImage.push(alcard.image)
+            vpName.push(alcard.name)
+            vpLocation.push(alcard.location)
+            $(".popup").slideDown("slow");
+            $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
+            $("#textUpdate").text("Do you wish to fight " + vpName[0] + "?");
+            $("#confirmB").click(function () {
+                $(".menuFight").slideDown("normal");
+                $("#choiceCont").html('<div id="fightB" class="menuButt"><p>Attack!</p></div>')
+                $("#textUpdate").text("The battle BEGINS: " + pName + " VS " + vpName[0] + " In a fight to the DEATH!");
+                $("#heroFightPicture").html(pImage)
+                $("#printfHP").text(hp);
+                $("#printfAP").text(ap);
+                $("#printfCP").text(cp);
+                $("#villainFightPicture").html(vpImage)
+                $("#printvHP").text(vhp);
+                $("#printvAP").text(vap);
+                $("#printvCP").text(vcp);
+
+                attackAttack = [];
+                $("#fightB").click(function () {
+                    if (vhp > 0) {
+                        // app
+                        ap++
+                        $("#heroFightUpdates").text(pName + " Attacks!!");
+                        $("#villainFightUpdates").text(vpName + " Counters!")
+                        vhp = vhp - ap
+                        hp = hp - vcp
+                        $("#printvHP").text(vhp);
+                        $("#printfHP").text(hp)
+                    }
+                    else if (vhp <= 0) {
+                        $("#heroFightUpdates").text(pName + " Is VICTORIOUS!!");
+                        $("#villainFightUpdates").text(vpName + " Is DEAD!")
+                        $("#choiceCont").html('<div id="mapB" class="menuButt"><p>Map</p></div>')
+                        $("#mapB").click(function () {
+                            $(".menuFight").slideUp("normal");
+                            $("#playerCont").html(pImage)
+                            $("#textCont").slideDown("slow")
+                            $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+                            $("#choiceCont").html('')
+                            $(vpLocation[0]).fadeOut("slow")
+                            // vhp.shift()
+                            // vap.shift()
+                            // vcp.shift()
+                            // vpImage.shift()
+                            // vpName.shift()
+                            // vpLocation.shift()
+                            // vhp.pop()
+                            // vap.pop()
+                            // vcp.pop()
+                            // vpImage.pop()
+                            // vpName.pop()
+                            // vpLocation.pop()
+                            vhp = ['ericHolder'];
+                            vap = ['ericHolder'];
+                            vcp = ['ericHolder'];
+                            vpImage = ['ericHolder'];
+                            vpName = ['ericHolder'];
+                            vpLocation = ['ericHolder'];
+                        });
+                    }
+                    if (hp <= 0) {
+                        $("#heroFightUpdates").text(pName + " Is DEAD!!");
+                        $("#villainFightUpdates").text(vpName + " Is VICTORIOUS!")
+                        $("#choiceCont").html('<div id="gameOver" class="menuButt"><p>Reset</p></div>')
+                        $("#gameOver").click(function () {
+                            location.reload(true)
+
+                        })
+                    }
+                })
+
+            })
+        
+
+        $("#abandonB").click(function () {
+                $("#choiceCont").slideUp("fast");
+                $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+            //     vhp.shift()
+            //     vap.shift()
+            //     vcp.shift()
+            //     vpImage.shift()
+            //     vpName.shift()
+            //     vpLocation.shift()
+            //     vhp.pop()
+            //     vap.pop()
+            //     vcp.pop()
+            //     vpImage.pop()
+            //     vpName.pop()
+            //     vpLocation.pop()
+            // $('#conCatOne').attr('data-clicked', false);
+            // $('#conCatTwo').attr('data-clicked', false);
+            // $('#conCatThree').attr('data-clicked', false);
+            // $('#conCatOne').attr('data-clicked', false);
+            // $('#conCat').attr('data-clicked', false);
+        });
+        })
+        $("#conContThree").click(function() {
+            
+            vhp.shift()
+            vap.shift()
+            vcp.shift()
+            vpImage.shift()
+            vpName.shift()
+            vpLocation.shift()
+
+            vhp.push(boneDragon.hp)
+            vap.push(boneDragon.ap)
+            vcp.push(boneDragon.cp)
+            vpImage.push(boneDragon.image)
+            vpName.push(boneDragon.name)
+            vpLocation.push(boneDragon.location)
+            $(".popup").slideDown("slow");
+            $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
+            $("#textUpdate").text("Do you wish to fight " + vpName[0] + "?");
+            $("#confirmB").click(function () {
+                $(".menuFight").slideDown("normal");
+                $("#choiceCont").html('<div id="fightB" class="menuButt"><p>Attack!</p></div>')
+                $("#textUpdate").text("The battle BEGINS: " + pName + " VS " + vpName[0] + " In a fight to the DEATH!");
+                $("#heroFightPicture").html(pImage)
+                $("#printfHP").text(hp);
+                $("#printfAP").text(ap);
+                $("#printfCP").text(cp);
+                $("#villainFightPicture").html(vpImage)
+                $("#printvHP").text(vhp);
+                $("#printvAP").text(vap);
+                $("#printvCP").text(vcp);
+
+                attackAttack = [];
+                $("#fightB").click(function () {
+                    if (vhp > 0) {
+                        // app
+                        ap++
+                        $("#heroFightUpdates").text(pName + " Attacks!!");
+                        $("#villainFightUpdates").text(vpName + " Counters!")
+                        vhp = vhp - ap
+                        hp = hp - vcp
+                        $("#printvHP").text(vhp);
+                        $("#printfHP").text(hp)
+                    }
+                    else if (vhp <= 0) {
+                        $("#heroFightUpdates").text(pName + " Is VICTORIOUS!!");
+                        $("#villainFightUpdates").text(vpName + " Is DEAD!")
+                        $("#choiceCont").html('<div id="mapB" class="menuButt"><p>Map</p></div>')
+                        $("#mapB").click(function () {
+                            $(".menuFight").slideUp("normal");
+                            $("#playerCont").html(pImage)
+                            $("#textCont").slideDown("slow")
+                            $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+                            $("#choiceCont").html('')
+                            $(vpLocation[0]).fadeOut("slow")
+                            // vhp.shift()
+                            // vap.shift()
+                            // vcp.shift()
+                            // vpImage.shift()
+                            // vpName.shift()
+                            // vpLocation.shift()
+                            // vhp.pop()
+                            // vap.pop()
+                            // vcp.pop()
+                            // vpImage.pop()
+                            // vpName.pop()
+                            // vpLocation.pop()
+                             vhp = ['ericHolder'];
+         vap = ['ericHolder'];
+         vcp = ['ericHolder'];
+         vpImage = ['ericHolder'];
+         vpName = ['ericHolder'];
+         vpLocation = ['ericHolder'];
+
+                        });
+                    }
+                    if (hp <= 0) {
+                        $("#heroFightUpdates").text(pName + " Is DEAD!!");
+                        $("#villainFightUpdates").text(vpName + " Is VICTORIOUS!")
+                        $("#choiceCont").html('<div id="gameOver" class="menuButt"><p>Reset</p></div>')
+                        $("#gameOver").click(function () {
+                            location.reload(true)
+
+                        })
+                    }
+                })
+
+            })
+        
+
+        $("#abandonB").click(function () {
+                $("#choiceCont").slideUp("fast");
+                $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+            //     vhp.shift()
+            //     vap.shift()
+            //     vcp.shift()
+            //     vpImage.shift()
+            //     vpName.shift()
+            //     vpLocation.shift()
+            //     vhp.pop()
+            //     vap.pop()
+            //     vcp.pop()
+            //     vpImage.pop()
+            //     vpName.pop()
+            //     vpLocation.pop()
+            // $('#conCatOne').attr('data-clicked', false);
+            // $('#conCatTwo').attr('data-clicked', false);
+            // $('#conCatThree').attr('data-clicked', false);
+            // $('#conCatOne').attr('data-clicked', false);
+            // $('#conCat').attr('data-clicked', false);
+        });
+        })
+        $("#conContFour").click(function() {
+            
+            vhp.shift()
+            vap.shift()
+            vcp.shift()
+            vpImage.shift()
+            vpName.shift()
+            vpLocation.shift()
+            vhp.push(merman.hp)
+            vap.push(merman.ap)
+            vcp.push(merman.cp)
+            vpImage.push(merman.image)
+            vpName.push(merman.name)
+            vpLocation.push(merman.location)
+            $(".popup").slideDown("slow");
+            $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
+            $("#textUpdate").text("Do you wish to fight " + vpName[0] + "?");
+            $("#confirmB").click(function () {
+                $(".menuFight").slideDown("normal");
+                $("#choiceCont").html('<div id="fightB" class="menuButt"><p>Attack!</p></div>')
+                $("#textUpdate").text("The battle BEGINS: " + pName + " VS " + vpName[0] + " In a fight to the DEATH!");
+                $("#heroFightPicture").html(pImage)
+                $("#printfHP").text(hp);
+                $("#printfAP").text(ap);
+                $("#printfCP").text(cp);
+                $("#villainFightPicture").html(vpImage)
+                $("#printvHP").text(vhp);
+                $("#printvAP").text(vap);
+                $("#printvCP").text(vcp);
+
+                attackAttack = [];
+                $("#fightB").click(function () {
+                    if (vhp > 0) {
+                        // app
+                        ap++
+                        $("#heroFightUpdates").text(pName + " Attacks!!");
+                        $("#villainFightUpdates").text(vpName + " Counters!")
+                        vhp = vhp - ap
+                        hp = hp - vcp
+                        $("#printvHP").text(vhp);
+                        $("#printfHP").text(hp)
+                    }
+                    else if (vhp <= 0) {
+                        $("#heroFightUpdates").text(pName + " Is VICTORIOUS!!");
+                        $("#villainFightUpdates").text(vpName + " Is DEAD!")
+                        $("#choiceCont").html('<div id="mapB" class="menuButt"><p>Map</p></div>')
+                        $("#mapB").click(function () {
+                            $(".menuFight").slideUp("normal");
+                            $("#playerCont").html(pImage)
+                            $("#textCont").slideDown("slow")
+                            $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+                            $("#choiceCont").html('')
+                            $(vpLocation[0]).fadeOut("slow")
+                            // vhp.shift()
+                            // vap.shift()
+                            // vcp.shift()
+                            // vpImage.shift()
+                            // vpName.shift()
+                            // vpLocation.shift()
+                            // vhp.pop()
+                            // vap.pop()
+                            // vcp.pop()
+                            // vpImage.pop()
+                            // vpName.pop()
+                            // vpLocation.pop()
+                             vhp = ['ericHolder'];
+         vap = ['ericHolder'];
+         vcp = ['ericHolder'];
+         vpImage = ['ericHolder'];
+         vpName = ['ericHolder'];
+         vpLocation = ['ericHolder'];
+
+                        });
+                    }
+                    if (hp <= 0) {
+                        $("#heroFightUpdates").text(pName + " Is DEAD!!");
+                        $("#villainFightUpdates").text(vpName + " Is VICTORIOUS!")
+                        $("#choiceCont").html('<div id="gameOver" class="menuButt"><p>Reset</p></div>')
+                        $("#gameOver").click(function () {
+                            location.reload(true)
+
+                        })
+                    }
+                })
+
+            })
+        
+
+        $("#abandonB").click(function () {
+                $("#choiceCont").slideUp("fast");
+                $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
+            //     vhp.shift()
+            //     vap.shift()
+            //     vcp.shift()
+            //     vpImage.shift()
+            //     vpName.shift()
+            //     vpLocation.shift()
+            //     vhp.pop()
+            //     vap.pop()
+            //     vcp.pop()
+            //     vpImage.pop()
+            //     vpName.pop()
+            //     vpLocation.pop()
+            // $('#conCatOne').attr('data-clicked', false);
+            // $('#conCatTwo').attr('data-clicked', false);
+            // $('#conCatThree').attr('data-clicked', false);
+            // $('#conCatOne').attr('data-clicked', false);
+            // $('#conCat').attr('data-clicked', false);
+        });
+        })
+
+        
+
+
 
 
 
