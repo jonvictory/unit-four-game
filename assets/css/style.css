@@ -55,15 +55,15 @@ footer {
     border-style: ridge;
     border-width: 10px 10px 0px 10px;
     padding-top: 10px;
-    height: 10vh;
+    height: 12vh;
     position: absolute;
     width: 100%;
     bottom: 0;
 }
 
   .startScreen {
-    /* background-image: url("/clearlink.jpg"); */
-      background-color: black;
+    background-image: url("../images/Afternoon.jpg");
+      /* background-color: black; */
       display: block;
       height: 100%;
         background-position: center;
@@ -71,6 +71,37 @@ footer {
     background-size: cover;
     color: white;
     text-align: center;
+  }
+  .winScreen {
+    background-image: url("../images/Afternoon.jpg");
+      /* background-color: black; */
+      display: none;
+      height: 100%;
+        background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+  }
+
+  .overScreen {
+    background-image: url("../images/nightTime.jpg");
+      /* background-color: black; */
+      display: none;
+      height: 100%;
+        background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+  }
+
+  .contStart {
+    background-color: rgba(128, 128, 128, 0.671);
+    border-color:  rgba(128, 128, 128, 0.637);
+    border-width: 10px;
+    border-style: ridge;
+    color: white;
   }
 
   .containerBg {
@@ -143,7 +174,7 @@ footer {
     }
 
     .playerConfirm {
-        font-size: .5em;
+        
         font-style: italic;
     }
 
@@ -279,6 +310,22 @@ footer {
       margin-left: 1rem;
       text-align: center;
       
+  }
+  .gameButt {
+    border-style: outset;
+    border-width: 10px;
+    border-color: grey;
+    background-color: grey;
+    color: white;
+    width: 8rem;
+    height: 4rem;
+    text-align: center;
+    
+}
+  .blankButt {
+    width: 4rem;
+      height: 2rem;
+      margin-left: 1rem;
   }
 
   .heroFight {

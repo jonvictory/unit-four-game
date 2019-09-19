@@ -8,13 +8,13 @@ window.onload = function () {
     var pImageAtt = [];
     var pName = [];
     var pVampsKilld = 0;
-
+    var apInc = []
 //player objects
     var simon = {
         id: 0,
         name: "Simon Belmont",
         hp: 800,
-        ap: 4,
+        ap: 10,
         cp: 3,
         image: '<img src="assets/images/simonWalking.gif" class="images">',
         imageAttack: '<img src="assets/images/simonAttacking.gif" class="imageCorr">'
@@ -24,9 +24,9 @@ window.onload = function () {
     var strider = {
         id: 1,
         name: "Strider",
-        hp: 10,
-        ap: 8,
-        cp: 2,
+        hp: 675,
+        ap: 15,
+        cp: 5,
         image: '<img src="assets/images/heroStrider.gif" class="images">',
         imageAttack: '<img src="assets/images/heroStrider.gif" class="imageCorr">'
     }
@@ -34,8 +34,8 @@ window.onload = function () {
     var ryu = {
         id: 2,
         name: "Ryu Hayabusa",
-        hp: 400,
-        ap: 10,
+        hp: 575,
+        ap: 17,
         cp: 10,
         image: '<img src="assets/images/heroNinja.gif" class="images">',
         imageAttack: '<img src="assets/images/heroNinja.gif" class="imageCorr">'
@@ -44,9 +44,9 @@ window.onload = function () {
     var morigann = {
         id: 0,
         name: "Morigann",
-        hp: 10,
+        hp: 100,
         ap: 10,
-        cp: 1,
+        cp: 8,
         image: '<img src="assets/images/morriganAttack.gif" class="imageCorr">',
         location: '#conContOne'
     }
@@ -56,7 +56,7 @@ window.onload = function () {
         name: "Alcard Dracula",
         hp: 200,
         ap: 10,
-        cp: 2,
+        cp: 5,
         image: '<img src="assets/images/villainTwo.gif" style="width:300px; height: 300px;">',
         location: '#conContTwo'
     }
@@ -66,7 +66,7 @@ window.onload = function () {
         name: "Bone Dragon",
         hp: 300,
         ap: 10,
-        cp: 3,
+        cp: 7,
         image: '<img src="assets/images/villainThree.gif" class="imageCorr">',
         location: "#conContThree"
     }
@@ -76,7 +76,7 @@ window.onload = function () {
         name: "Mermandia",
         hp: 400,
         ap: 10,
-        cp: 4,
+        cp: 9,
         image: '<img src="assets/images/merman.gif" class="imageCorr">',
         location: "#conContFour"
     }
@@ -86,7 +86,7 @@ window.onload = function () {
         name: "Vlad Dracula",
         hp: 500,
         ap: 10,
-        cp: 5,
+        cp: 10,
         image: '<img src="assets/images/villainFour.gif" class="imageCorr">',
         location: "#conContBoss"
     }
@@ -190,6 +190,7 @@ window.onload = function () {
     $("#charSelOne").click(function () {
         hp.push(simon.hp)
         ap.push(simon.ap)
+        apInc.push(simon.ap)
         cp.push(simon.cp)
         pImage.push(simon.image)
         pImageAtt.push(simon.imageAttack)
@@ -203,6 +204,7 @@ window.onload = function () {
     $("#charSelTwo").click(function () {
         hp.push(strider.hp)
         ap.push(strider.ap)
+        apInc.push(strider.ap)
         cp.push(strider.cp)
         pImage.push(strider.image)
         pImageAtt.push(strider.imageAttack)
@@ -214,6 +216,7 @@ window.onload = function () {
     $("#charSelThree").click(function () {
         hp.push(ryu.hp)
         ap.push(ryu.ap)
+        apInc.push(ryu.ap)
         cp.push(ryu.cp)
         pImage.push(ryu.image)
         pImageAtt.push(ryu.imageAttack)
@@ -229,7 +232,7 @@ window.onload = function () {
         $("header").slideToggle("slow");
         $("#printHP").text(hp);
         $("#printAP").text(ap);
-        $("#printCP").text(cp);
+        
     })
 
     //image animation attempts. Couldn't get animation to work because the functions I found delete the elements that they animate.
@@ -336,6 +339,7 @@ window.onload = function () {
         $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
         $("#textUpdate").text("Do you wish to fight " + vpName[0] + "?");
 
+        //confirm fight
         $("#confirmB").click(function () {
             $(".menuFight").slideDown("normal");
             $("#choiceCont").html('<div id="fightB" class="menuButt"><p>Attack!</p></div>')
@@ -343,19 +347,16 @@ window.onload = function () {
             $("#heroFightPicture").html(pImageAtt)
             $("#printfHP").text(hp);
             $("#printfAP").text(ap);
-            $("#printfCP").text(cp);
             $("#villainFightPicture").html(vpImage)
             $("#printvHP").text(vhp);
-            $("#printvAP").text(vap);
+            vcp = parseFloat (vcp) + parseFloat (vcp)*parseFloat(pVampsKilld)
             $("#printvCP").text(vcp);
             
-
-            attackAttack = [];
+            //attack function
             $("#fightB").click(function () {
                 if (vhp > 0) {
-
-                    ap++
-
+                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
+                    $("#printAP").text(ap);
                     $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
                     $("#textUpdate").text( vpName + " is clever and deadly. Take care, " + pName + ", do not faulter!" )
@@ -386,6 +387,8 @@ window.onload = function () {
                         vpName = ['ericHolder'];
                         vpLocation = ['ericHolder'];
                         pVampsKilld++
+                        ap = parseFloat(Math.round(ap/1.5))
+                        $("#printAP").text(ap);
                         $("#printVampsKilld").text(pVampsKilld);
                     });
                 }
@@ -393,11 +396,19 @@ window.onload = function () {
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is DEAD!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is VICTORIOUS!")
                     $("#textUpdate").text( vpName + " was truy too much." + pName + " Rest in peace, your world will live in terror." )
-                    $("#choiceCont").html('<div id="gameOver" class="menuButt"><p>Reset</p></div>')
+                    $("#choiceCont").html('<div class="blankButt"><p></p></div><div id="gameOver" class="menuButt"><p>Game Over</p></div>')
                     $("#gameOver").click(function () {
-                        location.reload(true)
-
+                        $(".menuFight").slideUp("slow");
+                        $(".bg").fadeOut("slow");
+                        $(".overScreen").fadeIn("slow");
+                        $("#textCont").slideDown("slow")
+                        $("#resetButt2").click(function () {
+                            location.reload(true)
+                        
+                        })
                     })
+                    
+                    
                 }
             })
 
@@ -430,6 +441,8 @@ window.onload = function () {
         $(".popup").slideDown("slow");
         $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
         $("#textUpdate").text("Do you wish to fight " + vpName[0] + "?");
+
+        //confirm fight
         $("#confirmB").click(function () {
             $(".menuFight").slideDown("normal");
             $("#choiceCont").html('<div id="fightB" class="menuButt"><p>Attack!</p></div>')
@@ -437,16 +450,16 @@ window.onload = function () {
             $("#heroFightPicture").html(pImageAtt)
             $("#printfHP").text(hp);
             $("#printfAP").text(ap);
-            $("#printfCP").text(cp);
             $("#villainFightPicture").html(vpImage)
             $("#printvHP").text(vhp);
-            $("#printvAP").text(vap);
+            vcp = parseFloat (vcp) + parseFloat (vcp)*parseFloat(pVampsKilld)
             $("#printvCP").text(vcp);
 
-            attackAttack = [];
+            //attack function
             $("#fightB").click(function () {
                 if (vhp > 0) {
-                    ap++
+                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
+                    $("#printAP").text(ap);
                     $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
                     $("#textUpdate").text( "Look at the speed of " + vpName + "! Can" + pName + " survive?" )
@@ -476,6 +489,8 @@ window.onload = function () {
                         vpName = ['ericHolder'];
                         vpLocation = ['ericHolder'];
                         pVampsKilld++
+                        ap = parseFloat (Math.round(ap/1.5))
+                        $("#printAP").text(ap);
                         $("#printVampsKilld").text(pVampsKilld);
                     });
                 }
@@ -483,11 +498,19 @@ window.onload = function () {
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is DEAD!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is VICTORIOUS!")
                     $("#textUpdate").text( vpName + " has taken our hero. Where should we go now that " + pName + " is dead?")
-                    $("#choiceCont").html('<div id="gameOver" class="menuButt"><p>Reset</p></div>')
+                    $("#choiceCont").html('<div class="blankButt"><p></p></div><div id="gameOver" class="menuButt"><p>Game Over</p></div>')
                     $("#gameOver").click(function () {
-                        location.reload(true)
-
+                        $(".menuFight").slideUp("slow");
+                        $(".bg").fadeOut("slow");
+                        $(".overScreen").fadeIn("slow");
+                        $("#textCont").slideDown("slow")
+                        $("#resetButt2").click(function () {
+                            location.reload(true)
+                        
+                        })
                     })
+                    
+                    
                 }
             })
 
@@ -521,6 +544,7 @@ window.onload = function () {
         $(".popup").slideDown("slow");
         $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
         $("#textUpdate").text("Do you wish to fight " + vpName[0] + "?");
+        //confirm fight
         $("#confirmB").click(function () {
             $(".menuFight").slideDown("normal");
             $("#choiceCont").html('<div id="fightB" class="menuButt"><p>Attack!</p></div>')
@@ -528,23 +552,23 @@ window.onload = function () {
             $("#heroFightPicture").html(pImageAtt)
             $("#printfHP").text(hp);
             $("#printfAP").text(ap);
-            $("#printfCP").text(cp);
             $("#villainFightPicture").html(vpImage)
             $("#printvHP").text(vhp);
-            $("#printvAP").text(vap);
+            vcp = parseFloat (vcp) + parseFloat (vcp)*parseFloat(pVampsKilld)
             $("#printvCP").text(vcp);
 
-            attackAttack = [];
+            //attack function
             $("#fightB").click(function () {
                 if (vhp > 0) {
-                    ap++
+                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
+                    $("#printAP").text(ap);
                     $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
                     $("#textUpdate").text(pName + " looks to be off to a strong start!")
-                    
                     vhp = vhp - ap
                     hp = hp - vcp
                     $("#printvHP").text(vhp);
+                    $("#printvCP").text(vcp);
                     $("#printfHP").text(hp)
                 }
                 else if (vhp <= ap) {
@@ -568,6 +592,8 @@ window.onload = function () {
                         vpName = ['ericHolder'];
                         vpLocation = ['ericHolder'];
                         pVampsKilld++
+                        ap = parseFloat (Math.round(ap/1.5))
+                        $("#printAP").text(ap);
                         $("#printVampsKilld").text(pVampsKilld);
                     });
                 }
@@ -575,11 +601,19 @@ window.onload = function () {
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is DEAD!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is VICTORIOUS!")
                     $("#textUpdate").text("Good things come to those who wait, and unto " + pName + ", a long deserved rest.")
-                    $("#choiceCont").html('<div id="gameOver" class="menuButt"><p>Reset</p></div>')
+                    $("#choiceCont").html('<div class="blankButt"><p></p></div><div id="gameOver" class="menuButt"><p>Game Over</p></div>')
                     $("#gameOver").click(function () {
-                        location.reload(true)
-
+                        $(".menuFight").slideUp("slow");
+                        $(".bg").fadeOut("slow");
+                        $(".overScreen").fadeIn("slow");
+                        $("#textCont").slideDown("slow")
+                        $("#resetButt2").click(function () {
+                            location.reload(true)
+                        
+                        })
                     })
+                    
+                    
                 }
             })
 
@@ -611,6 +645,7 @@ window.onload = function () {
         $(".popup").slideDown("slow");
         $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
         $("#textUpdate").text("Do you wish to fight " + vpName[0] + "?");
+        //confirm fight
         $("#confirmB").click(function () {
             $(".menuFight").slideDown("normal");
             $("#choiceCont").html('<div id="fightB" class="menuButt"><p>Attack!</p></div>')
@@ -618,25 +653,26 @@ window.onload = function () {
             $("#heroFightPicture").html(pImage)
             $("#printfHP").text(hp);
             $("#printfAP").text(ap);
-            $("#printfCP").text(cp);
             $("#villainFightPicture").html(vpImage)
             $("#printvHP").text(vhp);
-            $("#printvAP").text(vap);
+            vcp = parseFloat (vcp) + parseFloat (vcp)*parseFloat(pVampsKilld)
             $("#printvCP").text(vcp);
 
-            attackAttack = [];
+           //attack function
             $("#fightB").click(function () {
                 if (vhp > 0) {
-                    ap++
+                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
+                    $("#printAP").text(ap);
                     $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
                     $("#textUpdate").text("Prepare for a close match!")
-                    vhp = vhp - ap
-                    hp = hp - vcp
+                    vhp = parseFloat(vhp) - parseFloat(ap)
+                    hp = parseFloat(hp) - parseFloat(vcp)
                     $("#printvHP").text(vhp);
                     $("#printfHP").text(hp)
+                    
                 }
-                else if (vhp <= ap) {
+                else if (parseFloat(ap) > parseFloat(vhp)) {
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is VICTORIOUS!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is DEAD!")
                     $("#textUpdate").text("Mermandia: Merman, " + pName + ". I'm a merman!"  )
@@ -656,17 +692,25 @@ window.onload = function () {
                         vpName = ['ericHolder'];
                         vpLocation = ['ericHolder'];
                         pVampsKilld++
+                        ap = parseFloat (Math.round(ap/1.5))
                         $("#printVampsKilld").text(pVampsKilld);
+                        $("#printAP").text(ap);
                     });
                 }
-                if (hp <= vcp) {
+                if (parseFloat(hp) < parseFloat(vcp)) {
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is DEAD!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is VICTORIOUS!")
                     $("#textUpdate").text("The saddest day." + pName + " is no more.")
-                    $("#choiceCont").html('<div id="gameOver" class="menuButt"><p>Reset</p></div>')
+                    $("#choiceCont").html('<div class="blankButt"><p></p></div><div id="gameOver" class="menuButt"><p>Game Over</p></div>')
                     $("#gameOver").click(function () {
-                        location.reload(true)
-                    
+                        $(".menuFight").slideUp("slow");
+                        $(".bg").fadeOut("slow");
+                        $(".overScreen").fadeIn("slow");
+                        $("#textCont").slideDown("slow")
+                        $("#resetButt2").click(function () {
+                            location.reload(true)
+                        
+                        })
                     })
                 }
             })
@@ -702,6 +746,8 @@ window.onload = function () {
         $(".popup").slideDown("slow");
         $("#choiceCont").html('<div id="confirmB" class="menuButt"><p>Confirm?</p></div><div id="abandonB" class="menuButt"><p>Abandon?</p>')
         $("#textUpdate").text("Do you wish to fight " + vpName[0] + "?");
+        
+        //confirm fight
         $("#confirmB").click(function () {
             $(".menuFight").slideDown("normal");
             $("#choiceCont").html('<div id="fightB" class="menuButt"><p>Attack!</p></div>')
@@ -709,16 +755,16 @@ window.onload = function () {
             $("#heroFightPicture").html(pImage)
             $("#printfHP").text(hp);
             $("#printfAP").text(ap);
-            $("#printfCP").text(cp);
+            
             $("#villainFightPicture").html(vpImage)
             $("#printvHP").text(vhp);
-            $("#printvAP").text(vap);
+            vcp = parseFloat (vcp) + parseFloat (vcp)*parseFloat(pVampsKilld)
             $("#printvCP").text(vcp);
-
-            attackAttack = [];
+            //fight function
             $("#fightB").click(function () {
                 if (vhp > 0) {
-                    ap++
+                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
+                    $("#printAP").text(ap);
                     $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
                     $("#textUpdate").text("IS THERE NO STOPPING VLAD DRACULA!?")
@@ -730,7 +776,7 @@ window.onload = function () {
                 else if (vhp <= ap) {
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is VICTORIOUS!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is DEAD!")
-                    $("#textUpdate").text(vpName + ":" +  pName + "!" + "THE AGE OF MAN WILL END--SOMEDAY! V@mPiRz 4 eva!")
+                    $("#textUpdate").text(vpName + ": " +  pName + "!" + " THE AGE OF MAN WILL END--SOMEDAY! V@mPiRz 4 eva!")
                     $("#choiceCont").html('<div id="mapB" class="menuButt"><p>Map</p></div>')
                     $("#villainFightPicture").fadeOut("slow")
                     $("#mapB").click(function () {
@@ -739,26 +785,31 @@ window.onload = function () {
                         $("#textCont").slideDown("slow")
                         $("#textUpdate").text(pName + ", click on a MONSTER to engage them in battle.")
                         $("#choiceCont").html('')
-                        $(vpLocation[0]).fadeOut("slow")
-                        vhp = ['ericHolder'];
-                        vap = ['ericHolder'];
-                        vcp = ['ericHolder'];
-                        vpImage = ['ericHolder'];
-                        vpName = ['ericHolder'];
-                        vpLocation = ['ericHolder'];
-                        pVampsKilld++
-                        $("#printVampsKilld").text(pVampsKilld);
+                        $(".bg").fadeOut("slow")
+                        $(".winScreen").fadeIn("slow");
+                        $("#resetButt").click(function () {
+                            location.reload(true)
+                        
+                        })
                     });
                 }
                 if (hp <= vcp) {
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is DEAD!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is VICTORIOUS!")
-                    $("#textUpdate").text("FOREVER NIGHT!" + pName + " is banished TO HELL!!" + vpName + "LIVES FOREVER!" )
-                    $("#choiceCont").html('<div id="gameOver" class="menuButt"><p>Reset</p></div>')
+                    $("#textUpdate").text("FOREVER NIGHT! " + pName + " is banished TO HELL!! " + vpName + " LIVES FOREVER!" )
+                    $("#choiceCont").html('<div class="blankButt"><p></p></div><div id="gameOver" class="menuButt"><p>Game Over</p></div>')
                     $("#gameOver").click(function () {
-                        location.reload(true)
-                    
+                        $(".menuFight").slideUp("slow");
+                        $(".bg").fadeOut("slow");
+                        $(".overScreen").fadeIn("slow");
+                        $("#textCont").slideDown("slow")
+                        $("#resetButt2").click(function () {
+                            location.reload(true)
+                        
+                        })
                     })
+                    
+                   
                 }
             })
 
@@ -777,5 +828,29 @@ window.onload = function () {
     }
     })
 
+
+    $(function () {
+        var startScreen = $('.startScreen');
+        var backgrounds = [
+          'url(assets/images/Afternoon.jpg)', 
+          'url(assets/images/lateAfternoon.jpg)',
+          'url(assets/images/evening.jpg)',
+          'url(assets/images/nightTime.jpg)',
+          'url(assets/images/evening.jpg)',
+          'url(assets/images/lateAfternoon.jpg)']
+
+        var current = 0;
+    
+        function nextBackground() {
+            startScreen.css(
+                'background-image',
+            backgrounds[current = ++current % backgrounds.length]);
+    
+            setTimeout(nextBackground, 2000);
+        }
+        setTimeout(nextBackground, 2000);
+        startScreen.css('background-image', backgrounds[0]);
+    });
+    
 }
 
