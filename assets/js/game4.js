@@ -354,19 +354,9 @@ window.onload = function () {
             
             //attack function
             $("#fightB").click(function () {
-                if (vhp > 0) {
-                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
-                    $("#printAP").text(ap);
-                    $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
-                    $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
-                    $("#textUpdate").text( vpName + " is clever and deadly. Take care, " + pName + ", do not faulter!" )
-                    vhp = vhp - ap
-                    hp = hp - vcp
-                    $("#printvHP").text(vhp);
-                    $("#printfHP").text(hp)
-                }
 
-                else if (vhp <= ap) {
+                if (vhp <= ap) {
+                    $("#printvHP").text(vhp);
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is VICTORIOUS!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is DEAD!")
                     $("#textUpdate").text( vpName + " has fallen! Let the war continue, " + pName + "!" )
@@ -392,6 +382,20 @@ window.onload = function () {
                         $("#printVampsKilld").text(pVampsKilld);
                     });
                 }
+                else if (vhp > 0) {
+                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
+                    $("#printAP").text(ap);
+                    $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
+                    $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
+                    $("#textUpdate").text( vpName + " is clever and deadly. Take care, " + pName + ", do not faulter!" )
+                    vhp = vhp - ap
+                    hp = hp - vcp
+                    $("#printfAP").text(ap);
+                    $("#printvHP").text(vhp);
+                    $("#printfHP").text(hp)
+                }
+
+                
                 if (hp <= vcp) {
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is DEAD!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is VICTORIOUS!")
@@ -457,18 +461,8 @@ window.onload = function () {
 
             //attack function
             $("#fightB").click(function () {
-                if (vhp > 0) {
-                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
-                    $("#printAP").text(ap);
-                    $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
-                    $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
-                    $("#textUpdate").text( "Look at the speed of " + vpName + "! Can" + pName + " survive?" )
-                    vhp = vhp - ap
-                    hp = hp - vcp
-                    $("#printvHP").text(vhp);
-                    $("#printfHP").text(hp)
-                }
-                else if (vhp <= ap) {
+                if (vhp <= ap) {
+                    $("#printvHP").text('0');
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is VICTORIOUS!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is DEAD!")
                     $("#textUpdate").text( vpName + " Has been slain! " + pName + "! You have surely angered Vlad Dracula by killing his only begotten son!" )
@@ -494,6 +488,19 @@ window.onload = function () {
                         $("#printVampsKilld").text(pVampsKilld);
                     });
                 }
+                else if (vhp > 0) {
+                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
+                    $("#printAP").text(ap);
+                    $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
+                    $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
+                    $("#textUpdate").text( "Look at the speed of " + vpName + "! Can" + pName + " survive?" )
+                    vhp = vhp - ap
+                    hp = hp - vcp
+                    $("#printfAP").text(ap);
+                    $("#printvHP").text(vhp);
+                    $("#printfHP").text(hp)
+                }
+                
                 if (hp <= vcp) {
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is DEAD!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is VICTORIOUS!")
@@ -559,19 +566,8 @@ window.onload = function () {
 
             //attack function
             $("#fightB").click(function () {
-                if (vhp > 0) {
-                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
-                    $("#printAP").text(ap);
-                    $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
-                    $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
-                    $("#textUpdate").text(pName + " looks to be off to a strong start!")
-                    vhp = vhp - ap
-                    hp = hp - vcp
-                    $("#printvHP").text(vhp);
-                    $("#printvCP").text(vcp);
-                    $("#printfHP").text(hp)
-                }
-                else if (vhp <= ap) {
+                if (vhp <= ap) {
+                    $("#printvHP").text('0');
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is VICTORIOUS!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is DEAD!")
                     $("#textUpdate").text(pName + ": Fool! Mardock desires not, your baren wasteland of a desicated viscera!")
@@ -597,6 +593,20 @@ window.onload = function () {
                         $("#printVampsKilld").text(pVampsKilld);
                     });
                 }
+                else if (vhp > 0) {
+                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
+                    $("#printAP").text(ap);
+                    $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
+                    $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
+                    $("#textUpdate").text(pName + " looks to be off to a strong start!")
+                    vhp = vhp - ap
+                    hp = hp - vcp
+                    $("#printfAP").text(ap);
+                    $("#printvHP").text(vhp);
+                    $("#printvCP").text(vcp);
+                    $("#printfHP").text(hp)
+                }
+                
                 if (hp <= vcp) {
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is DEAD!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is VICTORIOUS!")
@@ -660,19 +670,8 @@ window.onload = function () {
 
            //attack function
             $("#fightB").click(function () {
-                if (vhp > 0) {
-                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
-                    $("#printAP").text(ap);
-                    $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
-                    $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
-                    $("#textUpdate").text("Prepare for a close match!")
-                    vhp = parseFloat(vhp) - parseFloat(ap)
-                    hp = parseFloat(hp) - parseFloat(vcp)
-                    $("#printvHP").text(vhp);
-                    $("#printfHP").text(hp)
-                    
-                }
-                else if (parseFloat(ap) > parseFloat(vhp)) {
+                if (ap > vhp) {
+                    $("#printvHP").text('0');
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is VICTORIOUS!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is DEAD!")
                     $("#textUpdate").text("Mermandia: Merman, " + pName + ". I'm a merman!"  )
@@ -697,6 +696,20 @@ window.onload = function () {
                         $("#printAP").text(ap);
                     });
                 }
+                else if (vhp > 0) {
+                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
+                    $("#printAP").text(ap);
+                    $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
+                    $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
+                    $("#textUpdate").text("Prepare for a close match!")
+                    vhp = parseFloat(vhp) - parseFloat(ap)
+                    hp = parseFloat(hp) - parseFloat(vcp)
+                    $("#printfAP").text(ap);
+                    $("#printvHP").text(vhp);
+                    $("#printfHP").text(hp)
+                    
+                }
+                
                 if (parseFloat(hp) < parseFloat(vcp)) {
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is DEAD!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is VICTORIOUS!")
@@ -762,18 +775,8 @@ window.onload = function () {
             $("#printvCP").text(vcp);
             //fight function
             $("#fightB").click(function () {
-                if (vhp > 0) {
-                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
-                    $("#printAP").text(ap);
-                    $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
-                    $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
-                    $("#textUpdate").text("IS THERE NO STOPPING VLAD DRACULA!?")
-                    vhp = vhp - ap
-                    hp = hp - vcp
-                    $("#printvHP").text(vhp);
-                    $("#printfHP").text(hp)
-                }
-                else if (vhp <= ap) {
+                if (vhp <= ap) {
+                    $("#printvHP").text('0');
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is VICTORIOUS!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is DEAD!")
                     $("#textUpdate").text(vpName + ": " +  pName + "!" + " THE AGE OF MAN WILL END--SOMEDAY! V@mPiRz 4 eva!")
@@ -793,6 +796,19 @@ window.onload = function () {
                         })
                     });
                 }
+                else if (vhp > 0) {
+                    ap = Math.round(parseFloat(ap) + parseFloat(Math.floor(Math.random() * parseFloat(apInc)) + 1));
+                    $("#printAP").text(ap);
+                    $("#heroFightUpdates").prepend('<br>' + pName + " Attacks!!");
+                    $("#villainFightUpdates").prepend('<br>' + vpName + " Counters!")
+                    $("#textUpdate").text("IS THERE NO STOPPING VLAD DRACULA!?")
+                    vhp = vhp - ap
+                    hp = hp - vcp
+                    $("#printfAP").text(ap);
+                    $("#printvHP").text(vhp);
+                    $("#printfHP").text(hp)
+                }
+                
                 if (hp <= vcp) {
                     $("#heroFightUpdates").prepend('<br>' + pName + " Is DEAD!!");
                     $("#villainFightUpdates").prepend('<br>' + vpName + " Is VICTORIOUS!")
